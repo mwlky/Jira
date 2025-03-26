@@ -6,7 +6,7 @@ interface NavbarButtonProps{
 
 const NavbarButton: React.FC<NavbarButtonProps> = ( {title} ) => {
   return (
-    <button className="navbarButton">
+    <button className="navbar-button">
         {title}
         <i className="fas fa-chevron-down"></i>
     </button>

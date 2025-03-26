@@ -2,7 +2,7 @@ import React from 'react'
 
 const LogoButton = () => {
   return (
-        <button className='jiraLogo'>
+        <button className='jira-logo'>
            <img src="/logo.png" alt="Jira Logo" />
         </button>
   )
