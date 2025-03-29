@@ -1,5 +1,5 @@
 import React from 'react'
-import "../styles/navbar.css"
+import "../../styles/navbar.css"
 import NavbarButton from './NavbarButton'
 import LogoButton from './LogoButton'
 import AppLauncher from './AppLauncher'
