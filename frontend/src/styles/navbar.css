@@ -59,6 +59,8 @@ button {
     cursor: pointer;
     background: none;
     border: none;
+    align-self: center;
+    padding-top: 5px;
 }
 
 .jira-logo img{
@@ -75,11 +77,7 @@ button {
     background-color: #ffffff00;
     border-color: #ffffff00;;
     padding-right: 2px;
-}
-
-.app-launcher i {
-    font-size: 17px;
-    color: #a2acbb;
+    margin-top: 3px;
 }
 
 .create-button 

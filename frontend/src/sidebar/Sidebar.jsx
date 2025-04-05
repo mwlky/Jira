@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import ProjectName from './ProjectName'
 
 import "../styles/navbar.css"
+import SidebarContent from './SidebarContent';
 
 const Sidebar = () => {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -13,6 +14,8 @@ const Sidebar = () => {
         </button>
 
         <ProjectName />
+        <SidebarContent />
+
     </div>
   )
 }

@@ -7,7 +7,25 @@
     overflow: hidden;
     
     border-right: 4px solid #282e33;
-    height: 1000px;
+    height: 100vh;
+}
+
+.sidebar-container::-webkit-scrollbar{
+    width: 15px;
+}
+
+.sidebar-container::-webkit-scrollbar-thumb {
+    background-color: #50565c;
+    border-radius: 15px;
+}
+
+.sidebar-content {
+    overflow-y: auto;
+    max-height: calc(100vh - 50px);
+    height: 80%;
+    width: 226px;
+
+    scrollbar-color: #50565c transparent;
 }
 
 .sidebar-container.collapsed {
@@ -53,7 +71,8 @@
     border-radius: 5px;
     background-color: #1D2125;
     width: 100%;
-    margin-left: 2px;
+    margin-left: 5px;
+    margin-top: 8px;
 }
 
 .project-image {
@@ -82,4 +101,85 @@
     font-size: 11px;
     margin: 0;
     padding: 0;
+}
+
+.content-title{
+    color: #a2acbb;
+    align-self: center;
+    font-size: 13px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    height: 8px;
+}
+
+.buttons-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-button-container{
+    display: flex;
+    height: 40px;
+    gap: 7px;
+    padding-left: 21px;
+    align-items: center;
+    background-color: rgba(29, 33, 37, 0);
+    border-color: rgba(29, 33, 37, 0);
+    transition: 0.2s;
+}
+
+.sidebar-button-container:hover{
+    background-color: #1c2b41;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.sidebar-button-icon{
+    background: none;
+    border: none;
+    color: #a2acbb;
+    align-self: left;
+    max-height: 24px;
+    max-width: 24px;
+    object-fit: contain;
+}
+
+.sidebar-button{
+    background: none;
+    color: #a2acbb;
+}
+
+.sidebar-button-text{
+    padding-left: 10px;
+    color: #a2acbb;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.content-header {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 5px;
+    color: #a2acbb;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    width: 100%;
+}
+
+.arrow-icon {
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    padding-right: 4px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.content-header:hover .arrow-icon{
+    opacity: 1;
+}
+
+.arrow-icon.open {
+    transform: rotate(-90deg);
 }
