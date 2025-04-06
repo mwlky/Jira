@@ -10,6 +10,10 @@
     height: 912px;
 }
 
+.sidebar-container:hover .toggle-button{
+    opacity: 1;
+}
+
 .sidebar-container::-webkit-scrollbar{
     width: 15px;
 }
@@ -56,6 +60,7 @@
     position: absolute;
 
     transition: 0.2s;
+    opacity: 0;
 }
 
 .toggle-button:hover{
