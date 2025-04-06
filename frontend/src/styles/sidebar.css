@@ -7,7 +7,7 @@
     overflow: hidden;
     
     border-right: 4px solid #282e33;
-    height: 100vh;
+    height: 912px;
 }
 
 .sidebar-container::-webkit-scrollbar{
@@ -21,8 +21,9 @@
 
 .sidebar-content {
     overflow-y: auto;
+    overflow-x: hidden;
     max-height: calc(100vh - 50px);
-    height: 80%;
+    height: 84%;
     width: 226px;
 
     scrollbar-color: #50565c transparent;
@@ -182,4 +183,33 @@
 
 .arrow-icon.open {
     transform: rotate(-90deg);
+}
+
+.project-info-text {
+    font-family: 'Roboto', sans-serif;
+    color: #a2acbb;
+    align-self: center;
+    font-size: 12px;
+}
+
+.project-info-container {
+    display: flex;
+    flex-direction: column;
+    border-top: 4px solid #282e33;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+}
+
+.learn-more-button {
+    border: none;
+    color: #a2acbb;
+    background-color: transparent;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.learn-more-button:hover {
+    text-decoration: underline;
 }

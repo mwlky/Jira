@@ -3,6 +3,7 @@ import ProjectName from './ProjectName'
 
 import "../styles/navbar.css"
 import SidebarContent from './SidebarContent';
+import ProjectInfo from './ProjectInfo';
 
 const Sidebar = () => {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -15,7 +16,8 @@ const Sidebar = () => {
 
         <ProjectName />
         <SidebarContent />
-
+        <ProjectInfo />
+        
     </div>
   )
 }
