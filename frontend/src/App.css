@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.app-layout {
+  display: flex;
+  flex: 1;
+  height: 100%;
+}

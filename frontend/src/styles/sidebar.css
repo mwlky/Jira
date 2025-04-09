@@ -7,7 +7,7 @@
     overflow: hidden;
     
     border-right: 4px solid #282e33;
-    height: 912px;
+    height: 839px;
 }
 
 .sidebar-container:hover .toggle-button{
@@ -40,6 +40,10 @@
 .sidebar-container.expanded {
     width: 215px;
 }
+
+.sidebar-container.collapsed .project-info-container {
+    display: none;
+  }
 
 .toggle-button {
     background-color: #282e33;
