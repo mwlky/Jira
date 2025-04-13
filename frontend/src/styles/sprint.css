@@ -1,0 +1,142 @@
+.project-path-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 7px;
+    height: 37px;
+    align-items: center;
+    align-content: center;
+    margin-top: 6px;
+}
+
+.project-path-button {
+    border: none;
+    color: #a2acbb;
+    background-color: transparent;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    padding: 0px;
+}
+
+.project-path-button:hover {
+    text-decoration: underline;
+}
+
+.project-path-text {
+    color: #a2acbb;
+}
+
+.sprint-title-header {
+    font-family: 'Roboto';
+    color: #a2acbb !important;
+    margin: 0;
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.left-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.sprint-details-text {
+    font-family: 'Roboto';
+    color: #8c9bab;
+    margin-top: 3px;
+    font-size: 12px;
+}
+
+.sprint-management-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.sprint-management-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sprint-button-image {
+    width: 24px;
+    height: 24px;
+}
+
+.sprint-icon-button {
+    background: none;
+    border: none;
+
+    transition: 0.3s;
+}
+
+.sprint-icon-button:hover {
+    background-color: #282d33;
+    border-radius: 3px;
+
+    transition: 0.3s;
+}
+
+.sprint-management-button {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background-color: #282d33;
+    border-color: rgba(240, 248, 255, 0);
+    color: #a2acbb;
+    font-weight: bold;
+    font-size: 13px;
+    border-radius: 2px;
+    height: 34px;
+    padding-left: 8px;
+    padding-right: 8px;
+
+    transition: 0.2s;
+}
+
+.sprint-management-button:hover {
+    background-color: #333c43;
+
+    transition: 0.2s;
+}
+
+.complete-sprint-button {
+    font-weight: bold;
+    font-size: 13px;
+    border-radius: 2px;
+    border-color: rgba(240, 248, 255, 0);
+    background-color: #579dff;
+    height: 34px;
+
+    transition: 0.2s;
+}
+
+.complete-sprint-button:hover {
+    background-color: #85b8ff;
+
+    transition: 0.2s;
+}
+
+.activity-timeline-flex {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.activity-timeline-flex p {
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    font-weight: bold;
+    color: #a2acbb;
+    font-family: 'Roboto', sans-serif;
+  }
+
+.activity-timeline-image {
+    width: 25px;
+    height: 25px;
+}

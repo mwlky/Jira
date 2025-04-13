@@ -1,0 +1,24 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+	<style type="text/css">
+		@supports (color-scheme: light) and (color-scheme: dark) {
+		svg {
+		color-scheme: light dark;
+		}
+		@media (prefers-color-scheme: light) {
+		:root {
+		--ds-icon: #44546F;
+		}
+		}
+		@media (prefers-color-scheme: dark) {
+		:root {
+		--ds-icon: #B6C2CF;
+		}
+		}
+		}
+		/* Safari */
+		_::-webkit-full-page-media, _:future, path {
+		fill: #738496;
+		}
+	</style>
+	<path d="M18.7839 17.9183H5.98392C5.01518 17.9183 4.53045 17.9183 4.16044 17.7297C3.83497 17.5639 3.57055 17.2993 3.40472 16.9739C3.21619 16.6039 3.21619 16.1195 3.21619 15.1507V4.94531M18.7837 6.67504L13.728 11.0988C13.1225 11.6286 12.8197 11.8935 12.4881 12.0035C12.0971 12.1332 11.6724 12.1191 11.2909 11.9636C10.9674 11.8318 10.683 11.5474 10.1141 10.9785C9.5576 10.422 9.27932 10.1437 8.96196 10.012C8.58761 9.85674 8.17078 9.83774 7.78391 9.95851C7.45593 10.0609 7.1535 10.3128 6.54885 10.8167L3.21619 13.5939" stroke="var(--ds-icon)" stroke-width="0.864865" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
