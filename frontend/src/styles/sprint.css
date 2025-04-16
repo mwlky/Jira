@@ -89,7 +89,7 @@
     font-weight: bold;
     font-size: 13px;
     border-radius: 2px;
-    height: 34px;
+    height: 31px;
     padding-left: 8px;
     padding-right: 8px;
 
@@ -108,7 +108,7 @@
     border-radius: 2px;
     border-color: rgba(240, 248, 255, 0);
     background-color: #579dff;
-    height: 34px;
+    height: 31px;
 
     transition: 0.2s;
 }
