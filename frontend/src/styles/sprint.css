@@ -79,29 +79,6 @@
     transition: 0.3s;
 }
 
-.sprint-management-button {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    background-color: #282d33;
-    border-color: rgba(240, 248, 255, 0);
-    color: #a2acbb;
-    font-weight: bold;
-    font-size: 13px;
-    border-radius: 2px;
-    height: 31px;
-    padding-left: 8px;
-    padding-right: 8px;
-
-    transition: 0.2s;
-}
-
-.sprint-management-button:hover {
-    background-color: #333c43;
-
-    transition: 0.2s;
-}
-
 .complete-sprint-button {
     font-weight: bold;
     font-size: 13px;

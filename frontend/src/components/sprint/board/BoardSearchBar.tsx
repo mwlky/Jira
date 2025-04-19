@@ -1,6 +1,6 @@
 import React from 'react'
 
-import '../../styles/boardSearchBar.css'
+import '../../../styles/boardSearchBar.css'
 
 const BoardSearchBar = () => {
   return (

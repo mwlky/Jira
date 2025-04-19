@@ -1,0 +1,10 @@
+.board-buttons-container {
+    display: flex;
+    flex-direction: row;
+    gap: 7px;
+}
+
+.group-by-text {
+    color: #8C9BAB;
+    font-size: 11px;
+}

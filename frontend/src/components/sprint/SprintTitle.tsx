@@ -1,6 +1,7 @@
 import React from 'react'
 
 import '../../styles/sprint.css'
+import '../../styles/global.css'
 
 const SprintDetails = () => {
   return (
@@ -28,14 +29,17 @@ const SprintDetails = () => {
             </button>
           </div>
 
-          <button className='sprint-management-button'>Start stand-up</button>
+          <button className='gray-button'>Start stand-up</button>
+
           <button className='complete-sprint-button'>Complete sprint</button>
-          <button className='sprint-management-button'>
-            <div className='activity-timeline-flex'>
+
+          <button className='gray-button'>
+            <div className='gray-button-with-content'>
               <img className='activity-timeline-image' src="/images/details/activity-icon.svg" alt="" />
               <p>Activity Timeline</p>
             </div>
-            </button>
+          </button>
+          
         </div>
 
       </div>

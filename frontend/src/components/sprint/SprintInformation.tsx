@@ -3,7 +3,7 @@ import SprintPath from './SprintPath'
 import SprintDetails from './SprintTitle'
 
 import '../../styles/sprint.css'
-import Board from './Board'
+import Board from './board/Board'
 
 const SprintInformation = () => {
   return (
