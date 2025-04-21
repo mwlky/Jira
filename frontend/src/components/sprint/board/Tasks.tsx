@@ -1,24 +1,53 @@
-import React from 'react'
-import { DragDropContext, DropResult } from '@hello-pangea/dnd'
+import React, { useState } from 'react'
+import { Task } from './Task'
+import { DragDropContext, Droppable, DropResult } from '@hello-pangea/dnd'
 
 import '../../../styles/tasks.css'
 import TaskContainer from './TaskContainer'
 
 const Tasks = () => {
   const handleDragEnd = (result: DropResult) => {
+    const {destination, source, draggableId} = result;
     console.log(result);
+
+    if(!destination)
+      return;
+
+    if(destination.droppableId === source.droppableId && 
+      destination.index === source.index)
+      return;
+
+    const movedTask = tasks.find(task => task.id === draggableId);
+    if(!movedTask)
+      return;
+
+    const updatedTask = { ...movedTask, droppableId: destination.droppableId };
+    const newTasks = tasks
+      .filter(task => task.id !== draggableId)
+      .concat(updatedTask);
+
+    setTasks(newTasks);
   }
+
+  const [tasks, setTasks] = useState<Task[]>([
+    { title: 'prajmus', droppableId: 'todo', id:'1' },
+    { title: 'el primuso', droppableId: 'paused', id:'2'},
+    { title: 'el primuso', droppableId: 'paused', id:'3'},
+    { title: 'el primuso', droppableId: 'paused', id:'4'},
+    { title: 'el primuso', droppableId: 'paused', id:'5'}
+
+  ]);
 
   return (
     <DragDropContext onDragEnd={handleDragEnd}>
       <div className='tasks-flex-container'>
-        <TaskContainer title='TO DO' droppableId='todo' />
-        <TaskContainer title='Paused' droppableId='paused' />
-        <TaskContainer title='In Progress' droppableId='inprogress' />
-        <TaskContainer title='Resolved' droppableId='resolved' />
-        <TaskContainer title='In Review' droppableId='review' />
-        <TaskContainer title='Archive' droppableId='archive' />
-        <TaskContainer title='Done' droppableId='done' />
+        <TaskContainer title='TO DO' droppableId='todo' tasks={tasks} />
+        <TaskContainer title='Paused' droppableId='paused' tasks={tasks} />
+        <TaskContainer title='In Progress' droppableId='inprogress' tasks={tasks} />
+        <TaskContainer title='Resolved' droppableId='resolved' tasks={tasks} />
+        <TaskContainer title='In Review' droppableId='review' tasks={tasks} />
+        <TaskContainer title='Archive' droppableId='archive' tasks={tasks} />
+        <TaskContainer title='Done' droppableId='done' tasks={tasks} />
       </div>
     </DragDropContext>
   )

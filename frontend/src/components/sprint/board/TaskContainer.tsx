@@ -1,21 +1,19 @@
 import React, {useState} from 'react'
 import { Droppable, Draggable } from '@hello-pangea/dnd';
 import TaskCard from './TaskCard';
+import { Task } from './Task';
 
 interface TaskContainerProps {
     title: string;
     droppableId: string;
-    
+    tasks:Task[]
 }
 
-const TaskContainer: React.FC<TaskContainerProps> = ({title, droppableId}) => {
-  const [tasks, setTasks] = useState([
-    { id: `${droppableId}-1`, title: 'Task numero 1' },
-    { id: `${droppableId}-2`, title: 'Improvements' },
-    { id: `${droppableId}-3`, title: 'Tiruriru' },
-  ]);
-    
+const TaskContainer: React.FC<TaskContainerProps> = ({title, droppableId, tasks}) => {    
+  const filteredTasks = tasks.filter(task => task.droppableId === droppableId);
+
   return (
+
     <div className="tasks-container">
       <h2 className="tasks-container-title">{title}</h2>
 
@@ -26,7 +24,7 @@ const TaskContainer: React.FC<TaskContainerProps> = ({title, droppableId}) => {
             ref={provided.innerRef}
             {...provided.droppableProps}
           >
-            {tasks.map((task, index) => (
+            {filteredTasks.map((task, index) => (
               <Draggable
                 key={task.id}
                 draggableId={task.id}
