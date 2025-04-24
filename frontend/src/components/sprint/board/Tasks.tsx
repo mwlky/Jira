@@ -31,23 +31,23 @@ const Tasks = () => {
 
   const [tasks, setTasks] = useState<Task[]>([
     { title: 'prajmus', droppableId: 'todo', id:'1' },
-    { title: 'el primuso', droppableId: 'paused', id:'2'},
-    { title: 'el primuso', droppableId: 'paused', id:'3'},
-    { title: 'el primuso', droppableId: 'paused', id:'4'},
-    { title: 'el primuso', droppableId: 'paused', id:'5'}
+    { title: 'zabic rudego', droppableId: 'paused', id:'2'},
+    { title: 'haha', droppableId: 'paused', id:'3'},
+    { title: 'woooo', droppableId: 'paused', id:'4'},
+    { title: 'test', droppableId: 'paused', id:'5'}
 
   ]);
-
+ 
   return (
     <DragDropContext onDragEnd={handleDragEnd}>
       <div className='tasks-flex-container'>
-        <TaskContainer title='TO DO' droppableId='todo' tasks={tasks} />
-        <TaskContainer title='Paused' droppableId='paused' tasks={tasks} />
-        <TaskContainer title='In Progress' droppableId='inprogress' tasks={tasks} />
-        <TaskContainer title='Resolved' droppableId='resolved' tasks={tasks} />
-        <TaskContainer title='In Review' droppableId='review' tasks={tasks} />
-        <TaskContainer title='Archive' droppableId='archive' tasks={tasks} />
-        <TaskContainer title='Done' droppableId='done' tasks={tasks} />
+        <TaskContainer title='TO DO' droppableId='todo' tasks={tasks} onTaskCreate={(task) => setTasks(prev => [...prev, task])}/>
+        <TaskContainer title='Paused' droppableId='paused' tasks={tasks} onTaskCreate={(task) => setTasks(prev => [...prev, task])}/>
+        <TaskContainer title='In Progress' droppableId='inprogress' tasks={tasks} onTaskCreate={(task) => setTasks(prev => [...prev, task])}/>
+        <TaskContainer title='Resolved' droppableId='resolved' tasks={tasks} onTaskCreate={(task) => setTasks(prev => [...prev, task])}/>
+        <TaskContainer title='In Review' droppableId='review' tasks={tasks} onTaskCreate={(task) => setTasks(prev => [...prev, task])}/>
+        <TaskContainer title='Archive' droppableId='archive' tasks={tasks} onTaskCreate={(task) => setTasks(prev => [...prev, task])}/>
+        <TaskContainer title='Done' droppableId='done' tasks={tasks} onTaskCreate={(task) => setTasks(prev => [...prev, task])}/>
       </div>
     </DragDropContext>
   )

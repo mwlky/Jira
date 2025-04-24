@@ -20,6 +20,10 @@
     flex:1;
 }
 
+.tasks-container:hover  .create-issue-container{
+  opacity: 1;
+}
+
 .tasks-container-title {
     color: #8C9BA7;
     margin-top: 4px;
@@ -40,7 +44,7 @@
   flex-direction: column;
   gap: 8px;
   flex: 1;
-  min-height: 400px;
+  min-height: 500px;
   width: 100%;
 }
 
@@ -62,6 +66,38 @@
   .tasks-sliders::-webkit-scrollbar-thumb:hover {
     background-color: #7cb1f1;
   }
+
+.temp-task-card {
+  background-color: #22272B;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: #85B8FF;
+    border-width: 2px;
+    color: #9AA4B0;
+    font-family: 'Roboto', sans-serif;
+    cursor: grab;
+    min-height: 75px;
+}
+
+.temp-task-input {
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: none;
+  font-size: 14px;
+  background-color: #9aa4b000;
+  border-color: #21272c00;
+  color: #7E8B9B;
+}
+
+.temp-task-input:focus {
+  background-color: #ffffff00;
+  border-color: #ffffff00;
+  color: #7E8B9B;
+  outline: none;
+}
 
   .task-card {
     background-color: #22272B;
@@ -116,4 +152,36 @@
   .assigned-to-task-avatar {
     width: 28px;
     height: 28px;
+  }
+
+  .create-issue-container {
+    display: flex;
+    flex-direction: row;
+    background: none;
+    border: none;
+    align-items: center;
+    gap: 3px;
+    width: 100%;
+    height: 35px;
+    opacity: 0;
+
+    transition: 0.1s;
+  }
+
+  .create-issue-container:hover {
+    background-color: #21272C;
+    border-radius: 3px;
+
+    transition: 0.1s;
+  }
+
+  .create-issue-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .create-issue-text {
+    color: #9AA4B0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
   }
