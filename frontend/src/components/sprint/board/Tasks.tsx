@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Task } from './Task'
+import { Task, TaskType } from './Task'
 import { DragDropContext, Droppable, DropResult } from '@hello-pangea/dnd'
 
 import '../../../styles/tasks.css'
@@ -30,11 +30,11 @@ const Tasks = () => {
   }
 
   const [tasks, setTasks] = useState<Task[]>([
-    { title: 'prajmus', droppableId: 'todo', id:'1' },
-    { title: 'zabic rudego', droppableId: 'paused', id:'2'},
-    { title: 'haha', droppableId: 'paused', id:'3'},
-    { title: 'woooo', droppableId: 'paused', id:'4'},
-    { title: 'test', droppableId: 'paused', id:'5'}
+    { title: 'prajmus', droppableId: 'todo', id:'1', type:TaskType.Task  },
+    { title: 'zabic rudego', droppableId: 'paused', id:'2', type:TaskType.Task},
+    { title: 'haha', droppableId: 'paused', id:'3', type:TaskType.Task},
+    { title: 'woooo', droppableId: 'paused', id:'4', type:TaskType.Task},
+    { title: 'test', droppableId: 'paused', id:'5', type:TaskType.Task}
 
   ]);
  

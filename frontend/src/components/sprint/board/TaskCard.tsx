@@ -1,21 +1,35 @@
 import React from 'react'
+import { Task, TaskType } from './Task'
 
 interface TaskCardProps {
-    title:string,
-    priority:string,
-    iconPath:string,
-    id:string,
-    // isTask:boolean,
+    task:Task
 }
 
-const TaskCard : React.FC<TaskCardProps> = ( {title, priority, iconPath, id}) => {
+const TaskCard : React.FC<TaskCardProps> = ( {task}) => {
+
+  const getIconPath = (type: TaskType): string => {
+    switch (type) {
+      case TaskType.Bug:
+        return "/images/bug-icon.svg";
+    
+        case TaskType.Story:
+          return "/images/story-icon.svg";
+
+        case TaskType.Task:
+          return "/images/task-icon.svg";
+
+      default:
+        return '';
+    }
+  };
+
   return (
     <div className='task-card'>
         <div className="task-card-flex">
-            <p className='task-card-text'>{title}</p>
+            <p className='task-card-text'>{task.title}</p>
             <div className="task-properties-flex">
                 <div className="task-type-container">
-                    <img src="/images/task-icon.svg" alt="task icon" className='task-type-icon' />
+                    <img src={getIconPath(task.type)} alt="task icon" className='task-type-icon' />
                     <p className='task-type-text'>DG-01</p>
                 </div>
                 <div className='task-type-container'>
