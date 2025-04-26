@@ -33,9 +33,7 @@ const TaskContainer: React.FC<TaskContainerProps> = ({
 
     const handleClickOutside = (e: MouseEvent) => {
       const target = e.target as Node;
-
-      console.log("Click at:", e.target);
-
+      
       if (tempTaskRef.current && !tempTaskRef.current.contains(target))
         handleCreateTask();
     };

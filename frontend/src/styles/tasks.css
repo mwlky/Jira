@@ -34,7 +34,7 @@
 
 .tasks-sliders {
   overflow: auto;
-  height: 679px;
+  height: 100%;
   white-space: nowrap;
   padding-bottom: 10px;
 }

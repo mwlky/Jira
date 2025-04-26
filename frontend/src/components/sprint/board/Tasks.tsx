@@ -8,7 +8,6 @@ import TaskContainer from './TaskContainer'
 const Tasks = () => {
   const handleDragEnd = (result: DropResult) => {
     const {destination, source, draggableId} = result;
-    console.log(result);
 
     if(!destination)
       return;
@@ -29,14 +28,7 @@ const Tasks = () => {
     setTasks(newTasks);
   }
 
-  const [tasks, setTasks] = useState<Task[]>([
-    { title: 'prajmus', droppableId: 'todo', id:'1', type:TaskType.Task  },
-    { title: 'zabic rudego', droppableId: 'paused', id:'2', type:TaskType.Task},
-    { title: 'haha', droppableId: 'paused', id:'3', type:TaskType.Task},
-    { title: 'woooo', droppableId: 'paused', id:'4', type:TaskType.Task},
-    { title: 'test', droppableId: 'paused', id:'5', type:TaskType.Task}
-
-  ]);
+  const [tasks, setTasks] = useState<Task[]>([]);
  
   return (
     <DragDropContext onDragEnd={handleDragEnd}>
