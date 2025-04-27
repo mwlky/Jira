@@ -20,7 +20,10 @@
 .navbar-right{
     display: flex;
     align-items: center;
-    column-gap: 7px;
+    column-gap: 9px;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
 }
 
 .navbar-button{
@@ -110,6 +113,7 @@ button {
 .profileIcon {
     width: 24px;
     height: 24px;
+    margin-left: 2px;
     border-radius: 50%;
     cursor: pointer;
     color: white;
@@ -131,23 +135,38 @@ button {
     border-color: #7cb1f1;
 }
 
-.notifications-icon, 
-.question-button, 
-.settings-button{
-    font-size: 18px;
+.sidebar-right-button{
     color: #a2acbb;
+    display: flex;
     background-color:rgba(255, 255, 255, 0);
     border-color: rgba(255, 255, 255, 0);
-    border-radius: 15px;
+    border-radius: 50%;
+    align-self: center;
+    width: 28px;
+    margin: 0;
+    padding: 0;
 
     transition: 0.2s;
 }
 
-.notifications-icon:hover,
-.question-button:hover,
-.settings-button:hover {
+.sidebar-right-button:hover {
     transition: 0.2s;
     background-color: rgba(109, 109, 109, 0.351);
-    border-radius: 15px;
+    border-radius: 50%;
 }
 
+.side-right-icon {
+    width: 23px;
+    height: 23px;
+}
+
+.search-container-navbar {
+    display: flex;
+    align-items: center;
+    background-color: #22272B;
+    border: 1px solid #738496;
+    border-radius: 4px;
+    padding: 6px 10px;
+    width: 185px;
+    height: 17px;
+}

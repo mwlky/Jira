@@ -24,14 +24,14 @@ const Navbar = () => {
 
         <div className='navbar-right'>
           <SearchBar />
-          <button className='notifications-icon'>
-            <i className="fas fa-bell"></i>
+          <button className='sidebar-right-button'>
+            <img src="/images/notifications-icon.svg" alt="notifications" className='side-right-icon' />
           </button>
-          <button className='question-button'>
-            <i className="fas fa-question-circle"></i>
+          <button className='sidebar-right-button'>
+            <img src="/images/question-mark-icon.svg" alt="questions" className='side-right-icon' ></img>
           </button>
-          <button className='settings-button'>
-            <i className="fas fa-cog"></i>
+          <button className='sidebar-right-button'>
+            <img src="/images/settings-icon.svg" alt="settings" className='side-right-icon' />
           </button>
 
           <ProfileIcon />
