@@ -1,10 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Droppable, Draggable } from "@hello-pangea/dnd";
 import TaskCard from "./TaskCard";
-import { Task, TaskType } from "./Task";
+import { TaskPriority as TaskPriority, Task, TaskType } from "./Task";
 
 import "../../../styles/global.css";
-import DropdownWithIcons from "./DropdownWithIcons";
+import TaskTypeDropdown from "./DropdownWithIcons";
+import TaskPriorityDropdown from "./TaskPriorityDropdown";
 
 interface TaskContainerProps {
   title: string;
@@ -21,6 +22,10 @@ const TaskContainer: React.FC<TaskContainerProps> = ({
 }) => {
   const [isCreating, setIsCreating] = useState(false);
   const [newTaskType, setNewTaskType] = useState<TaskType>(TaskType.Story);
+  const [newTaskPriority, setNewTaskPriority] = useState<TaskPriority>(
+    TaskPriority.Medium
+  );
+
   const tempTaskRef = useRef<HTMLDivElement>(null);
   const newTaskTitleRef = useRef("");
 
@@ -33,7 +38,7 @@ const TaskContainer: React.FC<TaskContainerProps> = ({
 
     const handleClickOutside = (e: MouseEvent) => {
       const target = e.target as Node;
-      
+
       if (tempTaskRef.current && !tempTaskRef.current.contains(target))
         handleCreateTask();
     };
@@ -58,12 +63,12 @@ const TaskContainer: React.FC<TaskContainerProps> = ({
         title: finalTitle,
         droppableId,
         type: newTaskType,
+        priority: newTaskPriority,
       };
 
       onTaskCreate(newTask);
       setIsCreating(false);
       newTaskTitleRef.current = "";
-      
     } else {
       setIsCreating(false);
       newTaskTitleRef.current = "";
@@ -107,11 +112,19 @@ const TaskContainer: React.FC<TaskContainerProps> = ({
                   placeholder="What needs to be done?"
                   autoFocus
                 />
-                <div className="temp-task-dropdown-wrapper">
-                  <DropdownWithIcons
-                    selectedType={newTaskType}
-                    onSelect={setNewTaskType}
-                  />
+                <div className="dropdowns-container">
+                  <div className="temp-task-dropdown-wrapper">
+                    <TaskTypeDropdown
+                      selectedType={newTaskType}
+                      onSelect={setNewTaskType}
+                    />
+                  </div>
+                  <div className="temp-task-dropdown-wrapper">
+                    <TaskPriorityDropdown
+                      onSelect={setNewTaskPriority}
+                      selectedPriority={newTaskPriority}
+                    />
+                  </div>
                 </div>
               </div>
             )}

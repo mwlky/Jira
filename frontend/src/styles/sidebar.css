@@ -1,223 +1,223 @@
 .sidebar-container {
-    background-color: #1D2125;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    padding: 10px;
-    overflow: hidden;
-    
-    border-right: 4px solid #282e33;
+  background-color: #1d2125;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 10px;
+  overflow: hidden;
+
+  border-right: 4px solid #282e33;
 }
 
-.sidebar-container:hover .toggle-button{
-    opacity: 1;
+.sidebar-container:hover .toggle-button {
+  opacity: 1;
 }
 
-.sidebar-container::-webkit-scrollbar{
-    width: 15px;
+.sidebar-container::-webkit-scrollbar {
+  width: 15px;
 }
 
 .sidebar-container::-webkit-scrollbar-thumb {
-    background-color: #50565c;
-    border-radius: 15px;
+  background-color: #50565c;
+  border-radius: 15px;
 }
 
 .sidebar-content {
-    overflow-y: auto;
-    overflow-x: hidden;
-    max-height: calc(100vh - 50px);
-    height: 85%;
-    width: 226px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: calc(100vh - 50px);
+  height: 85%;
+  width: 226px;
 
-    scrollbar-color: #50565c transparent;
+  scrollbar-color: #50565c transparent;
 }
 
 .sidebar-container.collapsed {
-    width: 0px;
+  width: 0px;
 }
 
 .sidebar-container.expanded {
-    width: 215px;
+  width: 215px;
 }
 
 .sidebar-container.collapsed .project-info-container {
-    display: none;
-  }
+  display: none;
+}
 
 .toggle-button {
-    background-color: #282e33;
-    outline: none;
-    border: none;
-    color: #a2acbb;
-    border-radius: 30px;
-    font-size: 15px;
-    width: 23px;
-    height: 23px;
-    cursor: pointer;
-    margin-bottom: 10px;
-    font-weight: bold;
+  background-color: #282e33;
+  outline: none;
+  border: none;
+  color: #a2acbb;
+  border-radius: 30px;
+  font-size: 15px;
+  width: 23px;
+  height: 23px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  font-weight: bold;
 
-    font-family: 'Roboto', sans-serif;
-    align-self: flex-end;
-    margin-right: -24px;
-    position: absolute;
+  font-family: "Roboto", sans-serif;
+  align-self: flex-end;
+  margin-right: -24px;
+  position: absolute;
 
-    transition: 0.2s;
-    opacity: 0;
+  transition: 0.2s;
+  opacity: 0;
 }
 
-.toggle-button:hover{
-    transition: 0.2s;
-    background-color: #5b9ae6;
-    color: white;
+.toggle-button:hover {
+  transition: 0.2s;
+  background-color: #5b9ae6;
+  color: white;
 }
 
-.project-name-container{
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px;
-    border-radius: 5px;
-    background-color: #1D2125;
-    width: 100%;
-    margin-left: 5px;
-    margin-top: 8px;
+.project-name-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 5px;
+  background-color: #1d2125;
+  width: 100%;
+  margin-left: 5px;
+  margin-top: 8px;
 }
 
 .project-image {
-    width: 24px;
-    height: 24px;
-    border-radius: 2px;
+  width: 24px;
+  height: 24px;
+  border-radius: 2px;
 }
 
 .project-details {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
-.project-title{
-    font-family: 'Roboto', sans-serif;
-    color: #bfc7d2;
-    font-size: 13px;
-    margin: 0;
-    padding: 0;
+.project-title {
+  font-family: "Roboto", sans-serif;
+  color: #bfc7d2;
+  font-size: 13px;
+  margin: 0;
+  padding: 0;
 }
 
-.project-type{
-    font-family: 'Roboto', sans-serif;
-    color: #a2acbb;
-    font-size: 11px;
-    margin: 0;
-    padding: 0;
+.project-type {
+  font-family: "Roboto", sans-serif;
+  color: #a2acbb;
+  font-size: 11px;
+  margin: 0;
+  padding: 0;
 }
 
-.content-title{
-    color: #a2acbb;
-    align-self: center;
-    font-size: 13px;
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;
-    height: 8px;
+.content-title {
+  color: #a2acbb;
+  align-self: center;
+  font-size: 13px;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  height: 8px;
 }
 
-.buttons-container{
-    display: flex;
-    flex-direction: column;
+.buttons-container {
+  display: flex;
+  flex-direction: column;
 }
 
-.sidebar-button-container{
-    display: flex;
-    height: 40px;
-    gap: 7px;
-    padding-left: 21px;
-    align-items: center;
-    background-color: rgba(29, 33, 37, 0);
-    border-color: rgba(29, 33, 37, 0);
-    transition: 0.2s;
+.sidebar-button-container {
+  display: flex;
+  height: 40px;
+  gap: 7px;
+  padding-left: 21px;
+  align-items: center;
+  background-color: rgba(29, 33, 37, 0);
+  border-color: rgba(29, 33, 37, 0);
+  transition: 0.2s;
 }
 
-.sidebar-button-container:hover{
-    background-color: #1c2b41;
-    font-weight: bold;
-    transition: 0.2s;
+.sidebar-button-container:hover {
+  background-color: #1c2b41;
+  font-weight: bold;
+  transition: 0.2s;
 }
 
-.sidebar-button-icon{
-    background: none;
-    border: none;
-    color: #a2acbb;
-    align-self: left;
-    max-height: 24px;
-    max-width: 24px;
-    object-fit: contain;
+.sidebar-button-icon {
+  background: none;
+  border: none;
+  color: #a2acbb;
+  align-self: left;
+  max-height: 24px;
+  max-width: 24px;
+  object-fit: contain;
 }
 
-.sidebar-button{
-    background: none;
-    color: #a2acbb;
+.sidebar-button {
+  background: none;
+  color: #a2acbb;
 }
 
-.sidebar-button-text{
-    padding-left: 10px;
-    color: #a2acbb;
-    font-family: 'Roboto', sans-serif;
-    font-size: 13px;
-    white-space: nowrap;
+.sidebar-button-text {
+  padding-left: 10px;
+  color: #a2acbb;
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+  white-space: nowrap;
 }
 
 .content-header {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    padding: 5px;
-    color: #a2acbb;
-    font-family: 'Roboto', sans-serif;
-    font-size: 13px;
-    font-weight: bold;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 5px;
+  color: #a2acbb;
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  width: 100%;
 }
 
 .arrow-icon {
-    transition: transform 0.2s ease, opacity 0.2s ease;
-    padding-right: 4px;
-    opacity: 0;
-    pointer-events: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  padding-right: 4px;
+  opacity: 0;
+  pointer-events: none;
 }
 
-.content-header:hover .arrow-icon{
-    opacity: 1;
+.content-header:hover .arrow-icon {
+  opacity: 1;
 }
 
 .arrow-icon.open {
-    transform: rotate(-90deg);
+  transform: rotate(-90deg);
 }
 
 .project-info-text {
-    font-family: 'Roboto', sans-serif;
-    color: #a2acbb;
-    align-self: center;
-    font-size: 12px;
+  font-family: "Roboto", sans-serif;
+  color: #a2acbb;
+  align-self: center;
+  font-size: 12px;
 }
 
 .project-info-container {
-    display: flex;
-    flex-direction: column;
-    border-top: 4px solid #282e33;
-    align-items: center;
-    align-content: center;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-top: 4px solid #282e33;
+  align-items: center;
+  align-content: center;
+  width: 100%;
 }
 
 .learn-more-button {
-    border: none;
-    color: #a2acbb;
-    background-color: transparent;
-    font-family: 'Roboto', sans-serif;
-    font-size: 12px;
-    font-weight: bold;
+  border: none;
+  color: #a2acbb;
+  background-color: transparent;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 .learn-more-button:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }

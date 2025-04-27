@@ -1,38 +1,38 @@
 .button-with-image-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .gray-button {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    background-color: #282d33;
-    border-color: rgba(240, 248, 255, 0);
-    color: #b1b8c3;
-    font-weight: bold;
-    font-size: 13px;
-    border-radius: 2px;
-    height: 31px;
-    padding-left: 8px;
-    padding-right: 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: #282d33;
+  border-color: rgba(240, 248, 255, 0);
+  color: #b1b8c3;
+  font-weight: bold;
+  font-size: 13px;
+  border-radius: 2px;
+  height: 31px;
+  padding-left: 8px;
+  padding-right: 8px;
 
-    transition: 0.2s;
+  transition: 0.2s;
 }
 
 .gray-button-with-content {
-    flex-direction: row;
-    align-content: center;
-    align-items: center;
-    gap: 5px;
-    display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  gap: 5px;
+  display: flex;
 }
 
 .gray-button:hover {
-    background-color: #333c43;
+  background-color: #333c43;
 
-    transition: 0.2s;
+  transition: 0.2s;
 }

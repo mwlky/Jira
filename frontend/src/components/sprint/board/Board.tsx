@@ -1,17 +1,17 @@
-import React from 'react'
+import React from "react";
 
-import SprintUsers from './SprintUsers'
-import SprintButtons from '../SprintButtons'
-import BoardSearchBar from './BoardSearchBar'
-import BoardInfoPanel from './BoardInfoPanel'
+import SprintUsers from "./SprintUsers";
+import SprintButtons from "../SprintButtons";
+import BoardSearchBar from "./BoardSearchBar";
+import BoardInfoPanel from "./BoardInfoPanel";
 
-import '../../../styles/board.css'
-import Tasks from './Tasks'
+import "../../../styles/board.css";
+import Tasks from "./Tasks";
 
 const Board = () => {
   return (
     <>
-      <div className='board-info-container'>
+      <div className="board-info-container">
         <div className="board-left">
           <BoardSearchBar />
           <SprintUsers />
@@ -25,7 +25,7 @@ const Board = () => {
         <Tasks />
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Board
+export default Board;

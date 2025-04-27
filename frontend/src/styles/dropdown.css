@@ -5,7 +5,6 @@
 
 .dropdown-selected {
   background-color: #22272b;
-  border: 1px solid #85b8ff;
   border-radius: 4px;
   padding: 6px 8px;
   display: flex;
@@ -13,7 +12,7 @@
   justify-content: space-between;
   cursor: pointer;
   color: #9aa4b0;
-  width: 15%;
+  width: 70%;
 }
 
 .dropdown-icon {
@@ -24,7 +23,7 @@
 
 .dropdown-arrow {
   margin-left: auto;
-  font-size: 12px;
+  font-size: 8px;
 }
 
 .dropdown-options {
@@ -36,7 +35,7 @@
   border: 1px solid #85b8ff;
   border-radius: 4px;
   z-index: 10;
-  width: 85px;
+  width: 100px;
 }
 
 .dropdown-option {
@@ -52,6 +51,6 @@
 }
 
 .type-select-acion-text {
-    font-family: 'Robot', sans-serif;
-    color: #9aa4b0;
+  font-family: "Robot", sans-serif;
+  color: #9aa4b0;
 }

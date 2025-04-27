@@ -1,15 +1,15 @@
 .main-view-container {
-    background-color: #1D2125;
-    color: #1D2125;
-    width: 100%;
-    max-height: calc(100vh - 10px);
-    padding-left: 32px;
-    padding-top: 8px;
-    padding-right: 32px;
-    flex-grow: 1;
-    overflow: auto;
+  background-color: #1d2125;
+  color: #1d2125;
+  width: 100%;
+  max-height: calc(100vh - 10px);
+  padding-left: 32px;
+  padding-top: 8px;
+  padding-right: 32px;
+  flex-grow: 1;
+  overflow: auto;
 }
 
 .main-view-content {
-    height: 79%;
+  height: 79%;
 }

@@ -1,14 +1,14 @@
 .users-container {
-    display: flex;
-    flex-direction: row;
-    gap: -10px;
-    margin-left: 15px;
+  display: flex;
+  flex-direction: row;
+  gap: -10px;
+  margin-left: 15px;
 }
 
 .avatar-button {
   width: 35px;
   height: 35px;
-  border: 4px solid #282D33;
+  border: 4px solid #282d33;
   border-radius: 50%;
   padding: 0;
   background-color: transparent;
@@ -21,8 +21,8 @@
 }
 
 .avatar-button:first-child {
-    margin-left: 0; 
-  }
+  margin-left: 0;
+}
 
 .avatar-icon {
   width: 35px;

@@ -1,172 +1,170 @@
 .navbar {
-    display: flex;
-    column-gap: 7px;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10px;
-    /* height: 60px; */
-    flex-shrink: 0;
+  display: flex;
+  column-gap: 7px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  /* height: 60px; */
+  flex-shrink: 0;
 
-    background-color: #1D2125;
-    border-bottom: 3px solid #282e33;;
+  background-color: #1d2125;
+  border-bottom: 3px solid #282e33;
 }
 
-.navbar-left{
-    display: flex;
-    column-gap: 7px;
-    align-items: center;
+.navbar-left {
+  display: flex;
+  column-gap: 7px;
+  align-items: center;
 }
 
-.navbar-right{
-    display: flex;
-    align-items: center;
-    column-gap: 9px;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
+.navbar-right {
+  display: flex;
+  align-items: center;
+  column-gap: 9px;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
 
-.navbar-button{
-    transition: 0.3s;
-    border-radius: 5px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    background-size: 100%;
+.navbar-button {
+  transition: 0.3s;
+  border-radius: 5px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-size: 100%;
 
-    border-color: rgba(255, 255, 255, 0);
-    background-color: rgba(255, 255, 255, 0);
-    font-family: 'Roboto', sans-serif;
-    font-size: 13px;
-    color: #a2acbb;
-    font-weight: bold;
+  border-color: rgba(255, 255, 255, 0);
+  background-color: rgba(255, 255, 255, 0);
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+  color: #a2acbb;
+  font-weight: bold;
 }
 
-.navbar-button:hover{
-    background-color: rgba(109, 109, 109, 0.351);
-    transition: 0.3s;
-    
-    padding-top: 5px;
-    padding-bottom: 5px;
-    background-position: center;
+.navbar-button:hover {
+  background-color: rgba(109, 109, 109, 0.351);
+  transition: 0.3s;
+
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-position: center;
 }
 
-.navbar-button i{
-    margin-left: 5px;
-    font-size: 10px;
-    font-weight: bold;
+.navbar-button i {
+  margin-left: 5px;
+  font-size: 10px;
+  font-weight: bold;
 }
 
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-.jira-logo{
-    border-radius: 5%;
-    cursor: pointer;
-    background: none;
-    border: none;
-    align-self: center;
-    padding-top: 5px;
+.jira-logo {
+  border-radius: 5%;
+  cursor: pointer;
+  background: none;
+  border: none;
+  align-self: center;
+  padding-top: 5px;
 }
 
-.jira-logo img{
-    width: 60px;
-
+.jira-logo img {
+  width: 60px;
 }
 
-.jira-logo:hover{
-    background-color: rgba(109, 109, 109, 0.351);
-    transition: 0.3s;
+.jira-logo:hover {
+  background-color: rgba(109, 109, 109, 0.351);
+  transition: 0.3s;
 }
 
-.app-launcher{
-    background-color: #ffffff00;
-    border-color: #ffffff00;;
-    padding-right: 2px;
-    margin-top: 3px;
+.app-launcher {
+  background-color: #ffffff00;
+  border-color: #ffffff00;
+  padding-right: 2px;
+  margin-top: 3px;
 }
 
-.create-button 
-{
-    background-color: #5b9ae6;
-    border: none;
+.create-button {
+  background-color: #5b9ae6;
+  border: none;
 
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;
-    color: #1D2125;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  color: #1d2125;
 
-    margin-left: 5px;
+  margin-left: 5px;
 
-    border-radius: 3px;
-    height: 30px;
-    width: 65px;
-    align-self: center;
+  border-radius: 3px;
+  height: 30px;
+  width: 65px;
+  align-self: center;
 
-    transition: 0.1s;
+  transition: 0.1s;
 }
 
 .create-button:hover {
-    background-color: #7cb1f1;
-    transition: 0.3s;
+  background-color: #7cb1f1;
+  transition: 0.3s;
 }
 
 .profileIcon {
-    width: 24px;
-    height: 24px;
-    margin-left: 2px;
-    border-radius: 50%;
-    cursor: pointer;
-    color: white;
+  width: 24px;
+  height: 24px;
+  margin-left: 2px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: white;
 }
 
 .searchBar {
-    background-color: #2b2e34;
-    border-radius: 5px;
-    padding: 6px 15px;
+  background-color: #2b2e34;
+  border-radius: 5px;
+  padding: 6px 15px;
 
-    border: 2px solid #a2acbb transparent;
-    outline: none;
+  border: 2px solid #a2acbb transparent;
+  outline: none;
 
-    border-color: #a2acbb;
-    transition: border-color 0.2s;
+  border-color: #a2acbb;
+  transition: border-color 0.2s;
 }
 
 .searchBar:focus {
-    border-color: #7cb1f1;
+  border-color: #7cb1f1;
 }
 
-.sidebar-right-button{
-    color: #a2acbb;
-    display: flex;
-    background-color:rgba(255, 255, 255, 0);
-    border-color: rgba(255, 255, 255, 0);
-    border-radius: 50%;
-    align-self: center;
-    width: 28px;
-    margin: 0;
-    padding: 0;
+.sidebar-right-button {
+  color: #a2acbb;
+  display: flex;
+  background-color: rgba(255, 255, 255, 0);
+  border-color: rgba(255, 255, 255, 0);
+  border-radius: 50%;
+  align-self: center;
+  width: 28px;
+  margin: 0;
+  padding: 0;
 
-    transition: 0.2s;
+  transition: 0.2s;
 }
 
 .sidebar-right-button:hover {
-    transition: 0.2s;
-    background-color: rgba(109, 109, 109, 0.351);
-    border-radius: 50%;
+  transition: 0.2s;
+  background-color: rgba(109, 109, 109, 0.351);
+  border-radius: 50%;
 }
 
 .side-right-icon {
-    width: 23px;
-    height: 23px;
+  width: 23px;
+  height: 23px;
 }
 
 .search-container-navbar {
-    display: flex;
-    align-items: center;
-    background-color: #22272B;
-    border: 1px solid #738496;
-    border-radius: 4px;
-    padding: 6px 10px;
-    width: 185px;
-    height: 17px;
+  display: flex;
+  align-items: center;
+  background-color: #22272b;
+  border: 1px solid #738496;
+  border-radius: 4px;
+  padding: 6px 10px;
+  width: 185px;
+  height: 17px;
 }

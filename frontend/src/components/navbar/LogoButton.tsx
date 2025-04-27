@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const LogoButton = () => {
   return (
-        <button className='jira-logo'>
-           <img src="/images/jira_elements/navbar/jiraButton.svg" alt="Jira Logo" />
-        </button>
-  )
-}
+    <button className="jira-logo">
+      <img src="/images/jira_elements/navbar/jiraButton.svg" alt="Jira Logo" />
+    </button>
+  );
+};
 
-export default LogoButton
+export default LogoButton;

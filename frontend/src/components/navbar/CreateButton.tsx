@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const CreateButton = () => {
-  return (
-    <button className='create-button'>
-        Create
-    </button>
-  )
-}
+  return <button className="create-button">Create</button>;
+};
 
-export default CreateButton
+export default CreateButton;
