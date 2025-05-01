@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Task, TaskType } from "./Task";
 import { DragDropContext, Droppable, DropResult } from "@hello-pangea/dnd";
 
@@ -6,7 +6,23 @@ import "../../../styles/tasks.css";
 import TaskContainer from "./TaskContainer";
 
 const Tasks = () => {
-  const handleDragEnd = (result: DropResult) => {
+  const [tasks, setTasks] = useState<Task[]>([]);
+
+  useEffect(() => {
+    const fetchTasks = async () => {
+      try {
+        const response = await fetch("http://localhost:5000/tasks");
+        const data = await response.json();
+        setTasks(data);
+      } catch (error) {
+        console.error("Failed to fetch tasks:", error);
+      }
+    };
+
+    fetchTasks();
+  }, []);
+
+  const handleDragEnd = async (result: DropResult) => {
     const { destination, source, draggableId } = result;
 
     if (!destination) return;
@@ -17,18 +33,45 @@ const Tasks = () => {
     )
       return;
 
-    const movedTask = tasks.find((task) => task.id === draggableId);
+    const movedTaskIndex = tasks.findIndex((task) => task.id == draggableId);
+    const movedTask = tasks[movedTaskIndex];
     if (!movedTask) return;
 
     const updatedTask = { ...movedTask, droppableId: destination.droppableId };
-    const newTasks = tasks
-      .filter((task) => task.id !== draggableId)
-      .concat(updatedTask);
 
-    setTasks(newTasks);
+    const newTasks = Array.from(tasks);
+    newTasks.splice(movedTaskIndex, 1);
+
+    const destinationIndex = newTasks.findIndex(
+      (t, i) =>
+        i === destination.index && t.droppableId === destination.droppableId
+    );
+
+    if (destinationIndex === -1) {
+      newTasks.push(updatedTask);
+    } else {
+      newTasks.splice(destination.index, 0, updatedTask);
+    }
+
+    setTasks(tasks);
+    try {
+      await fetch(`http://localhost:5000/tasks/${updatedTask.id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updatedTask),
+      });
+
+      const newTasks = tasks
+        .filter((task) => task.id !== updatedTask.id)
+        .concat(updatedTask);
+
+      setTasks(newTasks);
+    } catch (error) {
+      console.error("Failed to update task:", error);
+    }
   };
-
-  const [tasks, setTasks] = useState<Task[]>([]);
 
   return (
     <DragDropContext onDragEnd={handleDragEnd}>

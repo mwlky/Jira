@@ -13,8 +13,8 @@ export enum TaskType {
 }
 
 export enum TaskPriority {
-    Highest     = 'Hightest',
-    High        = 'Hight',
+    Highest     = 'Highest',
+    High        = 'High',
     Medium      = 'Medium',
     Low         = 'Low',
     Lowest      = 'Lowest'
