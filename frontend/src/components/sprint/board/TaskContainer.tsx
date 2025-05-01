@@ -55,6 +55,10 @@ const TaskContainer: React.FC<TaskContainerProps> = ({
     }
   };
 
+  const onTaskRemove = (task: Task) => {
+    console.log("removing task!");
+  };
+
   const handleCreateTask = async () => {
     const finalTitle = newTaskTitleRef.current.trim();
     if (finalTitle.trim() !== "") {
@@ -78,7 +82,6 @@ const TaskContainer: React.FC<TaskContainerProps> = ({
 
         const createdTask = await response.json();
         onTaskCreate(createdTask);
-        console.log("Log!");
       } catch (error) {
         console.log(error);
       }
@@ -114,7 +117,7 @@ const TaskContainer: React.FC<TaskContainerProps> = ({
                     {...provided.draggableProps}
                     {...provided.dragHandleProps}
                   >
-                    <TaskCard task={task} />
+                    <TaskCard task={task} onTaskRemove={() => onTaskRemove(task)} />
                   </div>
                 )}
               </Draggable>

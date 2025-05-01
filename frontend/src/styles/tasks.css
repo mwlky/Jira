@@ -42,7 +42,7 @@
 .task-list {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 4px;
   flex: 1;
   min-height: 500px;
   width: 100%;
@@ -100,11 +100,12 @@
 }
 
 .task-card {
+  position: relative;
   background-color: #22272b;
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 10px;
-  border-radius: 5px;
+  border-radius: 2px;
   color: #9aa4b0;
   font-family: "Roboto", sans-serif;
   cursor: grab;
@@ -115,6 +116,12 @@
   flex-direction: column;
   min-height: 75px;
   gap: 10px;
+}
+
+.task-card-flex:hover
+.more-button {
+  opacity: 1;
+  transition: 0.1s;
 }
 
 .task-card-text {
@@ -208,4 +215,54 @@
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
+}
+
+.more-button{
+  display: flex;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  left: 84%;
+  z-index: 1;
+  border: none;
+  opacity: 0;
+  background-color: #2B333A;
+  padding: 0;
+  border-radius: 3px;
+
+  transition: 0.1s;
+}
+
+.more-button:hover {
+  background-color: #374149;
+}
+
+.more-button-image {
+  width: 20px;
+  height: 20px;
+}
+
+.remove-task-button {
+  position: absolute;
+  left: 128px;
+  top: 43px;
+
+  padding-left: 5px;
+  padding-right: 5px;
+  z-index: 1;
+  background-color: #282E33;
+  border: 1px solid #39424A;
+  border-radius: 3px;
+
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.remove-text {
+  color: #B6C2CF;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }

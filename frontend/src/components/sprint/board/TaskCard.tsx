@@ -1,13 +1,28 @@
-import React from "react";
-import { Task, TaskPriorityIcons, TaskType, TaskTypeIcons } from "./Task";
+import React, { useEffect, useRef, useState } from "react";
+import { Task, TaskPriorityIcons, TaskTypeIcons } from "./Task";
 
 interface TaskCardProps {
   task: Task;
+  onTaskRemove: () => void;
 }
 
-const TaskCard: React.FC<TaskCardProps> = ({ task }) => {
+const TaskCard: React.FC<TaskCardProps> = ({ task, onTaskRemove }) => {
+  const [showRemoveButton, setShowRemoveButton] = useState(false);
+  const taskRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (taskRef.current && !taskRef.current.contains(e.target as Node)) {
+        setShowRemoveButton(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   return (
-    <div className="task-card">
+    <div className="task-card" ref={taskRef}>
       <div className="task-card-flex">
         <p className="task-card-text">{task.title}</p>
         <div className="task-properties-flex">
@@ -32,6 +47,23 @@ const TaskCard: React.FC<TaskCardProps> = ({ task }) => {
             />
           </div>
         </div>
+
+        <button
+          className="more-button"
+          onClick={() => setShowRemoveButton(!showRemoveButton)}
+        >
+          <img
+            className="more-button-image"
+            src="/images/dots.svg"
+            alt="options icon"
+          />
+        </button>
+
+        {showRemoveButton && (
+          <button className="remove-task-button" onClick={() => onTaskRemove()}>
+            <p className="remove-text">Remove</p>
+          </button>
+        )}
       </div>
     </div>
   );
