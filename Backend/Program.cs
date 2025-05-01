@@ -11,7 +11,7 @@ builder.Services.AddCors(options =>
                   .AllowAnyHeader());
 });
 
-builder.Services.AddDbContext<ApplicationDbContext>(options => 
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlite("Data Source=app.db"));
 
 builder.Services.AddControllers();

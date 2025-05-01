@@ -14,7 +14,6 @@ namespace DG.Jira.Backend.Controllers
 
         public TasksController(ApplicationDbContext applicationDbContext)
         {
-
             _context = applicationDbContext;
         }
 

@@ -66,28 +66,25 @@ const TaskContainer: React.FC<TaskContainerProps> = ({
       };
 
       try {
-        const response = await fetch('http://localhost:5000/tasks', {
-          method: 'POST',
+        const response = await fetch("http://localhost:5000/tasks", {
+          method: "POST",
           headers: {
-            'Content-Type': "application/json",
+            "Content-Type": "application/json",
           },
           body: JSON.stringify(taskToSend),
         });
 
-        if(!response.ok)
-          throw new Error('Failed to create task!');
+        if (!response.ok) throw new Error("Failed to create task!");
 
         const createdTask = await response.json();
         onTaskCreate(createdTask);
-        console.log('Log!');
-
+        console.log("Log!");
       } catch (error) {
         console.log(error);
       }
 
       setIsCreating(false);
       newTaskTitleRef.current = "";
-
     } else {
       setIsCreating(false);
       newTaskTitleRef.current = "";
@@ -106,7 +103,11 @@ const TaskContainer: React.FC<TaskContainerProps> = ({
             {...provided.droppableProps}
           >
             {filteredTasks.map((task, index) => (
-              <Draggable key={task.id} draggableId={String(task.id)} index={index}>
+              <Draggable
+                key={task.id}
+                draggableId={String(task.id)}
+                index={index}
+              >
                 {(provided) => (
                   <div
                     ref={provided.innerRef}
