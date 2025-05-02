@@ -5,7 +5,7 @@ Project is currently in development – aimed to be deployed on **Azure**.
 
 ## 🚀 Tech Stack
 
-- **Frontend**: React, TypeScript, Bootstrap
+- **Frontend**: React, TypeScript
 - **Backend**: .NET Core (C#), REST API
 - **Database**: To be decided (likely SQL Server / Azure SQL)
 - **Deployment**: Azure Web App
@@ -35,8 +35,8 @@ Project is currently in development – aimed to be deployed on **Azure**.
 
 ```bash
 cd frontend
-npm install
-npm run dev
+npm start
+```
 
 ### Backend
 
