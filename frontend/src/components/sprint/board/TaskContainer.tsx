@@ -12,6 +12,7 @@ interface TaskContainerProps {
   droppableId: string;
   tasks: Task[];
   onTaskCreate: (task: Task) => void;
+  onTaskRemoved: (taskId: string) => void;
 }
 
 const TaskContainer: React.FC<TaskContainerProps> = ({
@@ -19,6 +20,7 @@ const TaskContainer: React.FC<TaskContainerProps> = ({
   droppableId,
   tasks,
   onTaskCreate,
+  onTaskRemoved
 }) => {
   const [isCreating, setIsCreating] = useState(false);
   const [newTaskType, setNewTaskType] = useState<TaskType>(TaskType.Story);
@@ -55,8 +57,20 @@ const TaskContainer: React.FC<TaskContainerProps> = ({
     }
   };
 
-  const onTaskRemove = (task: Task) => {
-    console.log("removing task!");
+  const onTaskRemove = async (task: Task) => {
+    try {
+      const response = await fetch(`http://localhost:5000/tasks/${task.id}`, {
+        method: "DELETE",
+      })
+
+      if(!response.ok)
+        throw new Error("Failed to remove task!");
+
+      onTaskRemoved(task.id);
+
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const handleCreateTask = async () => {
@@ -78,7 +92,8 @@ const TaskContainer: React.FC<TaskContainerProps> = ({
           body: JSON.stringify(taskToSend),
         });
 
-        if (!response.ok) throw new Error("Failed to create task!");
+        if (!response.ok) 
+          throw new Error("Failed to create task!");
 
         const createdTask = await response.json();
         onTaskCreate(createdTask);
@@ -117,7 +132,10 @@ const TaskContainer: React.FC<TaskContainerProps> = ({
                     {...provided.draggableProps}
                     {...provided.dragHandleProps}
                   >
-                    <TaskCard task={task} onTaskRemove={() => onTaskRemove(task)} />
+                    <TaskCard
+                      task={task}
+                      onTaskRemove={() => onTaskRemove(task)}
+                    />
                   </div>
                 )}
               </Draggable>

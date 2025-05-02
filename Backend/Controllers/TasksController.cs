@@ -38,7 +38,8 @@ namespace DG.Jira.Backend.Controllers
         [HttpPut("{id}")]
         public IActionResult UpdateTask(int id, [FromBody] JiraTask updatedTask)
         {
-            JiraTask? existingTask = _context.tasks.FirstOrDefault(x => x.Id == id);
+            JiraTask? existingTask = _context.tasks
+                .FirstOrDefault(x => x.Id == id);
 
             if (existingTask == null)
             {
@@ -56,6 +57,23 @@ namespace DG.Jira.Backend.Controllers
             Console.WriteLine($"Updated task with id {id}.");
 
             return Ok(existingTask);
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteTask(int id)
+        {
+            JiraTask? taskToRemove = _context.tasks
+                .FirstOrDefault(x => x.Id == id);
+
+            if (taskToRemove == null)
+                return NotFound();
+
+            _context.tasks.Remove(taskToRemove);
+            _context.SaveChanges();
+
+            System.Console.WriteLine("Removed task!");
+
+            return Ok();
         }
     }
 }

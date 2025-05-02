@@ -22,6 +22,10 @@ const Tasks = () => {
     fetchTasks();
   }, []);
 
+  const handleRemoveTask = (taskId: string) => {
+      setTasks(prev => prev.filter(task => task.id !== taskId));
+  }
+
   const handleDragEnd = async (result: DropResult) => {
     const { destination, source, draggableId } = result;
 
@@ -81,42 +85,49 @@ const Tasks = () => {
           droppableId="todo"
           tasks={tasks}
           onTaskCreate={(task) => setTasks((prev) => [...prev, task])}
+          onTaskRemoved={handleRemoveTask}
         />
         <TaskContainer
           title="Paused"
           droppableId="paused"
           tasks={tasks}
           onTaskCreate={(task) => setTasks((prev) => [...prev, task])}
+          onTaskRemoved={handleRemoveTask}
         />
         <TaskContainer
           title="In Progress"
           droppableId="inprogress"
           tasks={tasks}
           onTaskCreate={(task) => setTasks((prev) => [...prev, task])}
+          onTaskRemoved={handleRemoveTask}
         />
         <TaskContainer
           title="Resolved"
           droppableId="resolved"
           tasks={tasks}
           onTaskCreate={(task) => setTasks((prev) => [...prev, task])}
+          onTaskRemoved={handleRemoveTask}
         />
         <TaskContainer
           title="In Review"
           droppableId="review"
           tasks={tasks}
           onTaskCreate={(task) => setTasks((prev) => [...prev, task])}
+          onTaskRemoved={handleRemoveTask}
         />
         <TaskContainer
           title="Archive"
           droppableId="archive"
           tasks={tasks}
           onTaskCreate={(task) => setTasks((prev) => [...prev, task])}
+          onTaskRemoved={handleRemoveTask}
         />
         <TaskContainer
           title="Done"
           droppableId="done"
           tasks={tasks}
           onTaskCreate={(task) => setTasks((prev) => [...prev, task])}
+          onTaskRemoved={handleRemoveTask}
         />
       </div>
     </DragDropContext>
