@@ -12,9 +12,9 @@ Project is currently in development – aimed to be deployed on **Azure**.
 
 ## 🎯 Features (planned)
 
-- 🔄 Project dashboard UI
+- ✅ Project dashboard UI
 - 🔄 Authentication system (login/register)
-- 🔄 Task management system (CRUD)
+- ✅ Task management system (CRUD)
 - 🔄 Assigning users to tasks
 - 🔄 Status flow (To Do / In Progress / Done)
 - 🔄 Responsive UI for desktop and mobile
@@ -34,6 +34,12 @@ Project is currently in development – aimed to be deployed on **Azure**.
 ### Frontend
 
 ```bash
-cd client
+cd frontend
 npm install
 npm run dev
+
+### Backend
+
+```bash
+cd backend
+dotnet run
