@@ -21,6 +21,14 @@ html {
   height: 400px;
 }
 
+.register-panel-form {
+  background-color: #181a1b;
+  border-radius: 5px;
+
+  width: 400px;
+  height: 450px;
+}
+
 .login-panel-flex {
   align-self: center;
   display: flex;
@@ -66,10 +74,11 @@ html {
 .continue-button {
   background-color: #0a52b6;
   width: 100%;
-  height: 35px;
+  height: 39px;
   border: none;
   color: #e8e6e0;
   font-size: 14px;
+  font-weight: bold;
   border-radius: 2px;
   font-family: "Roboto", sans-serif;
 }
@@ -132,4 +141,12 @@ html {
   font-size: 14px;
   align-self: center;
   margin-left: 8px;
+}
+
+.error-text{
+  color: #d33636;
+  font-size: 13px;
+  margin: 0;
+  text-align: center;
+  width: 100%;
 }

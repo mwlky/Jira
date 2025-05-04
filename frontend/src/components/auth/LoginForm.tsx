@@ -23,7 +23,7 @@ const LoginForm = () => {
             className="login-field"
           />
 
-          <input type="text" placeholder="Password" className="login-field" />
+          <input type="password" placeholder="Password" className="login-field" />
 
           <div className="remember-me-container">
             <input
