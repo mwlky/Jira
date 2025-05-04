@@ -1,8 +1,7 @@
 namespace DG.Jira.Backend.Controllers
 {
-
+    using Data;
     using Models;
-    using DG.Jira.Backend.Data;
     using Microsoft.AspNetCore.Mvc;
 
     [ApiController]

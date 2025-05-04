@@ -1,5 +1,7 @@
 import React from "react";
 
+import "../../styles/boardSearchBar.css";
+
 const SearchBar = () => {
   return (
     <div className="search-container-navbar">

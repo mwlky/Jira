@@ -1,10 +1,12 @@
-using DG.Jira.Backend.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace DG.Jira.Backend.Data
 {
-
-    public class ApplicationDbContext : DbContext
+    using Models;
+    
+    public class ApplicationDbContext : IdentityDbContext<IdentityUser>
     {
         public DbSet<JiraTask> tasks { get; set; }
 

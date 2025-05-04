@@ -1,0 +1,135 @@
+body,
+html {
+  background-color: #1a1c1e;
+  height: 100%;
+  margin: 0;
+}
+
+.login-form-parent {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a1c1e;
+}
+
+.login-panel-form {
+  background-color: #181a1b;
+  border-radius: 5px;
+
+  width: 400px;
+  height: 400px;
+}
+
+.login-panel-flex {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  gap: 15px;
+
+  margin-left: 35px;
+  margin-right: 35px;
+}
+
+.login-to-continue-text {
+  color: #c8c4bd;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.login-field {
+  background-color: #181a1b;
+  border: 1px solid #4e5558;
+  color: #c8c4bd;
+  width: 100%;
+  height: 35px;
+  border-radius: 2px;
+
+  transition: 0.1s;
+}
+
+.login-field:focus {
+  border: 1px solid #0047aa;
+  outline: none;
+  color: #c8c4bd;
+  transition: 0.1s;
+}
+
+.login-field::placeholder {
+  color: #4e5558;
+  padding-left: 3px;
+}
+
+.continue-button {
+  background-color: #0a52b6;
+  width: 100%;
+  height: 35px;
+  border: none;
+  color: #e8e6e0;
+  font-size: 14px;
+  border-radius: 2px;
+  font-family: "Roboto", sans-serif;
+}
+
+.attlasian-logo {
+  padding-top: 50px;
+  width: 240px;
+}
+
+.remember-me-container {
+  display: flex;
+  align-items: flex-start;
+  margin: 10px 0;
+  color: #c8c4bd;
+  font-size: 0.9rem;
+  width: 100%;
+  margin: 0;
+}
+
+.remember-me-checkbox {
+  background-color: #181a1b;
+}
+
+.create-account-button {
+  background: none;
+  border: none;
+  color: #2783f5;
+  font-family: "Robot", sans-serif;
+}
+
+.create-account-button:hover{
+  text-decoration: underline;
+}
+
+.throubleshooting-buttons-flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.cant-login-button {
+  background: none;
+  border: none;
+  color: #2783f5;
+  text-decoration: underline;
+  font-family: "Robot", sans-serif;
+}
+
+.cant-login-button:hover{
+  text-decoration: none;
+}
+
+.buttons-divider {
+  background: none;
+  border: none;
+  color: #9DA292;
+}
+
+.remember-me-text{
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  align-self: center;
+  margin-left: 8px;
+}
