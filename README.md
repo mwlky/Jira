@@ -6,8 +6,9 @@ Project is currently in development – aimed to be deployed on **Azure**.
 ## 🚀 Tech Stack
 
 - **Frontend**: React, TypeScript
-- **Backend**: .NET Core (C#), REST API
-- **Database**: To be decided (likely SQL Server / Azure SQL)
+- **Backend**: ASP.NET Core (C#), REST API, ASP.NET Identity
+- **Authentication**: Cookie-based auth (JWT planned)
+- **Database**: SQLite -> Azure SQL (planned)
 - **Deployment**: Azure Web App
 
 ## 🎯 Features (planned)
@@ -17,10 +18,10 @@ Project is currently in development – aimed to be deployed on **Azure**.
 - ✅ Task management system (CRUD)
 - 🔄 Assigning users to tasks
 - 🔄 Status flow (To Do / In Progress / Done)
-- 🔄 Responsive UI for desktop and mobile
+- ✅ Responsive UI for desktop and mobile
 - 🔄 Azure deployment pipeline
 
-> ✅ = done / in progress  
+> ✅ = done
 > 🔄 = upcoming
 
 ## 📦 How to run locally
