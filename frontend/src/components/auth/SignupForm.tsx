@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const SignupForm = () => {
   useEffect(() => {
     document.title = "Sign in to continue";
   }, []);
 
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState<string>("");
   const [confirmPassword, setConfirmPassword] = useState<string>();
   const [error, setError] = useState("");
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!email.includes("@")) {
       setError("Invalid email! Must contain @ sign!");
     } else if (!email.includes(".com")) {
@@ -20,8 +23,28 @@ const SignupForm = () => {
     } else if (password.length < 6) {
       setError("Password is too short!");
     } else {
-      setError("");
-      console.log("Correct!");
+      try {
+        const response = await fetch("http://localhost:5000/auth/register", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            username: email,
+            password: password,
+          }),
+        });
+
+        if (!response.ok) {
+          const errorData = await response.json();
+          setError(errorData[0]?.description || "Registration failed");
+        } else {
+          alert("Account created successfully!");
+          navigate("/login");
+        }
+      } catch (error) {
+        setError("Something went wrong during registration");
+      }
     }
   };
 

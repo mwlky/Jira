@@ -9,8 +9,8 @@ const MainView = () => {
   return (
     <div className="main-view-container">
       <div className="main-view-content">
-        {/* <SprintInformation />
-        <Board /> */}
+        <SprintInformation />
+        <Board />
       </div>
     </div>
   );
