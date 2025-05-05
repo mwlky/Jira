@@ -1,10 +1,54 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+
 import "../../styles/loginform.css";
 
 const LoginForm = () => {
   useEffect(() => {
     document.title = "Log in to continue";
   }, []);
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [remember, setRemember] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleLogIn = async () => {
+    if (email.length === 0) {
+      setError("Email cannot be empty!");
+      return;
+    }
+
+    if (!email.includes("@")) {
+      setError("Invalid email format!");
+      return;
+    }
+
+    if (password.length === 0) {
+      setError("Password cannot be empty!");
+      return;
+    }
+    setError("");
+
+    try {
+      const response = await fetch("http://localhost:5000/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username: email,
+          password: password,
+        }),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        setError(errorData.message);
+      } else {
+        console.log("login successfully!");
+      }
+    } catch (error) {}
+  };
 
   return (
     <div className="login-form-parent">
@@ -21,20 +65,34 @@ const LoginForm = () => {
             type="text"
             placeholder="Enter your email"
             className="login-field"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
 
-          <input type="password" placeholder="Password" className="login-field" />
+          <input
+            type="password"
+            placeholder="Password"
+            className="login-field"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
 
           <div className="remember-me-container">
             <input
               type="checkbox"
               id="remember"
               className="remember-me-checkbox"
+              onChange={(e) => setRemember(e.target.checked)}
             />
-            <label htmlFor="remember" className="remember-me-text">Remember me</label>
+            <label htmlFor="remember" className="remember-me-text">
+              Remember me
+            </label>
           </div>
 
-          <button className="continue-button">Continue</button>
+          {error && <p className="error-text">{error}</p>}
+          <button className="continue-button" onClick={handleLogIn}>
+            Continue
+          </button>
           <div className="throubleshooting-buttons-flex">
             <button className="cant-login-button">Can't log in?</button>
             <button className="buttons-divider">&bull;</button>
