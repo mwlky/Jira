@@ -14,7 +14,7 @@ Project is currently in development – aimed to be deployed on **Azure**.
 ## 🎯 Features (planned)
 
 - ✅ Project dashboard UI
-- 🔄 Authentication system (login/register)
+- ✅ Authentication system (login/register)
 - ✅ Task management system (CRUD)
 - 🔄 Assigning users to tasks
 - 🔄 Status flow (To Do / In Progress / Done)
