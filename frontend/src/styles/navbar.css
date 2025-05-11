@@ -4,7 +4,6 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 10px;
-  /* height: 60px; */
   flex-shrink: 0;
 
   background-color: #1d2125;
@@ -167,4 +166,34 @@ button {
   padding: 6px 10px;
   width: 185px;
   height: 17px;
+}
+
+.profile-icon-button {
+  background: none;
+  border: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.logout-button {
+  position: absolute;
+  right: 20px;
+  top: 45px;
+
+  padding-left: 5px;
+  padding-right: 5px;
+  z-index: 1;
+  background-color: #282E33;
+  border: 1px solid #39424A;
+  border-radius: 3px;
+
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.logout-text{
+  color: #B6C2CF;
+  margin-top: 3px;
+  margin-bottom: 3px;
 }

@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 
 import "../../styles/loginform.css";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     document.title = "Log in to continue";
   }, []);
@@ -45,9 +48,16 @@ const LoginForm = () => {
         const errorData = await response.json();
         setError(errorData.message);
       } else {
-        console.log("login successfully!");
+        const data = await response.json();
+        localStorage.setItem("token", data.token);
+
+        console.log("login succesfull: Token", data.token);
+
+        navigate("/board");
       }
-    } catch (error) {}
+    } catch (error) {
+      setError("Something went wrong");
+    }
   };
 
   return (

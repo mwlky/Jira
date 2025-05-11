@@ -1,11 +1,11 @@
 import React from "react";
 import "../../styles/navbar.css";
-import NavbarButton from "./NavbarButton";
+import SearchBar from "./SearchBar";
 import LogoButton from "./LogoButton";
+import ProfileIcon from "./ProfileIcon";
 import AppLauncher from "./AppLauncher";
 import CreateButton from "./CreateButton";
-import SearchBar from "./SearchBar";
-import ProfileIcon from "./ProfileIcon";
+import NavbarButton from "./NavbarButton";
 
 const Navbar = () => {
   return (
