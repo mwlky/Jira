@@ -3,76 +3,108 @@ namespace DG.Jira.Backend.Controllers
     using Data;
     using Models;
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Authorization;
+    using backend.Models;
 
     [ApiController]
     [Route("[controller]")]
     public class TasksController : ControllerBase
     {
-
+        private readonly ILogger<TasksController> _logger;
         private readonly ApplicationDbContext _context;
 
-        public TasksController(ApplicationDbContext applicationDbContext)
+        public TasksController(ApplicationDbContext applicationDbContext, ILogger<TasksController> logger)
         {
+            _logger = logger;
             _context = applicationDbContext;
         }
 
         [HttpGet]
-        public IEnumerable<JiraTask> GetTasks() =>
-            _context.tasks;
+        [Authorize]
+        public IEnumerable<JiraTask> GetTasks()
+        {
+            var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+            System.Console.WriteLine($"UserId? {userId}");
+
+            if (userId == null)
+                return Enumerable.Empty<JiraTask>();
+
+            IEnumerable<JiraTask> tasks = _context.Tasks
+                .Where(t => t.UserId == userId);
+
+            return tasks;
+        }
 
         [HttpPost]
-        public IActionResult AddTask([FromBody] JiraTask newTask)
+        [Authorize]
+        public IActionResult AddTask([FromBody] JiraTaskDto dto)
         {
+            string? userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+            if (userId == null)
+                return Unauthorized();
 
-            newTask.Id = (int)DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
-            _context.tasks.Add(newTask);
+            JiraTask newTask = new JiraTask
+            {
+                UserId = userId,
+                Id = (int)DateTimeOffset.UtcNow.ToUnixTimeMilliseconds(),
+                Type = dto.Type,
+                Title = dto.Title,
+                Priority = dto.Priority,
+                DroppableId = dto.DroppableId
+            };
+
+            _context.Tasks.Add(newTask);
             _context.SaveChanges();
-
-            System.Console.WriteLine("Added new task!");
-            System.Console.WriteLine($"Tasks amount: {_context.tasks.ToList().Count.ToString()}");
 
             return Ok(newTask);
         }
 
+        [Authorize]
         [HttpPut("{id}")]
-        public IActionResult UpdateTask(int id, [FromBody] JiraTask updatedTask)
+        public IActionResult UpdateTask(int id, [FromBody] JiraTaskDto updatedTaskDto)
         {
-            JiraTask? existingTask = _context.tasks
+            JiraTask? existingTask = _context.Tasks
                 .FirstOrDefault(x => x.Id == id);
 
             if (existingTask == null)
-            {
-                System.Console.WriteLine("Not found!");
                 return NotFound();
-            }
 
-            existingTask.Title = updatedTask.Title;
-            existingTask.DroppableId = updatedTask.DroppableId;
-            existingTask.Type = updatedTask.Type;
-            existingTask.Priority = updatedTask.Priority;
+            existingTask.Title = updatedTaskDto.Title;
+            existingTask.DroppableId = updatedTaskDto.DroppableId;
+            existingTask.Type = updatedTaskDto.Type;
+            existingTask.Priority = updatedTaskDto.Priority;
 
             _context.SaveChanges();
-
-            Console.WriteLine($"Updated task with id {id}.");
 
             return Ok(existingTask);
         }
 
+        [Authorize]
         [HttpDelete("{id}")]
         public IActionResult DeleteTask(int id)
         {
-            JiraTask? taskToRemove = _context.tasks
+            JiraTask? taskToRemove = _context.Tasks
                 .FirstOrDefault(x => x.Id == id);
 
             if (taskToRemove == null)
                 return NotFound();
 
-            _context.tasks.Remove(taskToRemove);
+            _context.Tasks.Remove(taskToRemove);
             _context.SaveChanges();
 
-            System.Console.WriteLine("Removed task!");
-
             return Ok();
+        }
+
+        [Authorize]
+        [HttpGet("me")]
+        public IActionResult Me()
+        {
+            return Ok(new
+            {
+                User.Identity.Name,
+                IsAuthenticated = User.Identity.IsAuthenticated,
+                Claims = User.Claims.Select(c => new { c.Type, c.Value })
+            });
         }
     }
 }

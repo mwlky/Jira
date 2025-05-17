@@ -8,12 +8,20 @@ namespace DG.Jira.Backend.Data
     
     public class ApplicationDbContext : IdentityDbContext<IdentityUser>
     {
-        public DbSet<JiraTask> tasks { get; set; }
+        public DbSet<JiraTask> Tasks { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-            : base(options)
-        {
+            : base(options){
 
+        }
+
+        protected override void OnModelCreating(ModelBuilder builder){
+            base.OnModelCreating(builder);
+
+            builder.Entity<JiraTask>()
+                .HasOne(t => t.User)
+                .WithMany()
+                .HasForeignKey(t => t.UserId);
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

@@ -4,6 +4,7 @@ import { DragDropContext, Droppable, DropResult } from "@hello-pangea/dnd";
 
 import "../../../styles/tasks.css";
 import TaskContainer from "./TaskContainer";
+import { authFetch } from "../../../Utils";
 
 const Tasks = () => {
   const [tasks, setTasks] = useState<Task[]>([]);
@@ -11,7 +12,15 @@ const Tasks = () => {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const response = await fetch("http://localhost:5000/tasks");
+        const response = await authFetch("http://localhost:5000/tasks");
+
+        if (!response.ok) {
+          const errorText = await response.text();
+          console.error(`HTTP ${response.status}: ${response.statusText} - ${errorText}`)
+          
+          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+
         const data = await response.json();
         setTasks(data);
       } catch (error) {
@@ -23,8 +32,8 @@ const Tasks = () => {
   }, []);
 
   const handleRemoveTask = (taskId: string) => {
-      setTasks(prev => prev.filter(task => task.id !== taskId));
-  }
+    setTasks((prev) => prev.filter((task) => task.id !== taskId));
+  };
 
   const handleDragEnd = async (result: DropResult) => {
     const { destination, source, draggableId } = result;
@@ -57,13 +66,10 @@ const Tasks = () => {
       newTasks.splice(destination.index, 0, updatedTask);
     }
 
-    setTasks(tasks);
+    setTasks(newTasks);
     try {
-      await fetch(`http://localhost:5000/tasks/${updatedTask.id}`, {
+      await authFetch(`http://localhost:5000/tasks/${updatedTask.id}`, {
         method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
         body: JSON.stringify(updatedTask),
       });
 

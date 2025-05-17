@@ -15,6 +15,10 @@ const LoginForm = () => {
   const [remember, setRemember] = useState(false);
   const [error, setError] = useState("");
 
+  const handleGoToRegister = () => {
+    navigate("/register");
+  };
+
   const handleLogIn = async () => {
     if (email.length === 0) {
       setError("Email cannot be empty!");
@@ -50,8 +54,6 @@ const LoginForm = () => {
       } else {
         const data = await response.json();
         localStorage.setItem("token", data.token);
-
-        console.log("login succesfull: Token", data.token);
 
         navigate("/board");
       }
@@ -106,7 +108,12 @@ const LoginForm = () => {
           <div className="throubleshooting-buttons-flex">
             <button className="cant-login-button">Can't log in?</button>
             <button className="buttons-divider">&bull;</button>
-            <button className="create-account-button">Create an account</button>
+            <button
+              className="create-account-button"
+              onClick={handleGoToRegister}
+            >
+              Create an account
+            </button>
           </div>
         </div>
       </div>

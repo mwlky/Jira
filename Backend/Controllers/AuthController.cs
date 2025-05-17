@@ -56,8 +56,12 @@ namespace DG.Jira.Backend.Controllers
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
             var token = new JwtSecurityToken(
-                claims: new[] { new Claim(ClaimTypes.Name, user.UserName) },
-                expires: DateTime.Now.AddHours(1),
+                claims: new[] {
+                    new Claim(ClaimTypes.NameIdentifier, user.Id),
+                    new Claim(ClaimTypes.Name, user.UserName)
+                },
+
+                expires: DateTime.Now.AddDays(1),
                 signingCredentials: creds);
 
             return new JwtSecurityTokenHandler().WriteToken(token);

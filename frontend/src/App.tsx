@@ -6,40 +6,50 @@ import {
   Routes,
   Route,
   useNavigate,
+  useLocation,
 } from "react-router-dom";
 import { useEffect } from "react";
+import { isTokenValid } from "./Utils";
 
+import MainApp from "./MainApp";
 import LoginForm from "./components/auth/LoginForm";
 import SignupForm from "./components/auth/SignupForm";
 import ProtectedRoute from "./components/ProtectedRoute";
-import MainApp from "./MainApp";
 
 function App() {
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const token = localStorage.getItem("token");
+    const isLoggedIn = token && isTokenValid(token);
 
-    if (token) 
-      navigate("/board"); 
+    if (!isLoggedIn && location.pathname !== "/login" && location.pathname !== "/register") 
+    {
+      localStorage.removeItem("token");
+      navigate("/login");
+    }
     
-    else navigate("/login");
-  }, [navigate]);
+    if (isLoggedIn && (location.pathname === "/login" || location.pathname === "/register")) {
+      navigate("/board");
+    }
+
+  }, [navigate, location]);
 
   return (
     <AuthProvider>
-        <Routes>
-          <Route path="/login" element={<LoginForm />}></Route>
-          <Route
-            path="/board"
-            element={
-              <ProtectedRoute>
-                <MainApp />
-              </ProtectedRoute>
-            }
-          />
-          <Route path="/register" element={<SignupForm />}></Route>
-        </Routes>
+      <Routes>
+        <Route path="/login" element={<LoginForm />}></Route>
+        <Route
+          path="/board"
+          element={
+            <ProtectedRoute>
+              <MainApp />
+            </ProtectedRoute>
+          }
+        />
+        <Route path="/register" element={<SignupForm />}></Route>
+      </Routes>
     </AuthProvider>
   );
 }

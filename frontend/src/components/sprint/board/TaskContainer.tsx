@@ -6,6 +6,7 @@ import { TaskPriority as TaskPriority, Task, TaskType } from "./Task";
 import "../../../styles/global.css";
 import TaskTypeDropdown from "./DropdownWithIcons";
 import TaskPriorityDropdown from "./TaskPriorityDropdown";
+import { authFetch } from "../../../Utils";
 
 interface TaskContainerProps {
   title: string;
@@ -84,11 +85,8 @@ const TaskContainer: React.FC<TaskContainerProps> = ({
       };
 
       try {
-        const response = await fetch("http://localhost:5000/tasks", {
+        const response = await authFetch("http://localhost:5000/tasks", {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
           body: JSON.stringify(taskToSend),
         });
 
