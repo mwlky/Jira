@@ -7,7 +7,7 @@ Project is currently in development – aimed to be deployed on **Azure**.
 
 - **Frontend**: React, TypeScript
 - **Backend**: ASP.NET Core (C#), REST API, ASP.NET Identity
-- **Authentication**: Cookie-based auth (JWT planned)
+- **Authentication**: Cookie-based auth (JWT)
 - **Database**: SQLite -> Azure SQL (planned)
 - **Deployment**: Azure Web App
 
@@ -16,7 +16,6 @@ Project is currently in development – aimed to be deployed on **Azure**.
 - ✅ Project dashboard UI
 - ✅ Authentication system (login/register)
 - ✅ Task management system (CRUD)
-- 🔄 Assigning users to tasks
 - 🔄 Status flow (To Do / In Progress / Done)
 - ✅ Responsive UI for desktop and mobile
 - 🔄 Azure deployment pipeline
