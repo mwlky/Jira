@@ -30,7 +30,7 @@ function App() {
       navigate("/login");
     }
     
-    if (isLoggedIn && (location.pathname === "/login" || location.pathname === "/register")) {
+    if (isLoggedIn && (location.pathname === "/login" || location.pathname === "/register" || location.pathname === "/")) {
       navigate("/board");
     }
 
