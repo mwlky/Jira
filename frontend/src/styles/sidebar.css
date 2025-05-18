@@ -221,3 +221,17 @@
 .learn-more-button:hover {
   text-decoration: underline;
 }
+
+@media (max-width: 768px) {
+  .sidebar-container {
+    display: none;
+  }
+
+  .sidebar-container.collapsed {
+    display: none;
+  }
+
+  .sidebar-container.expanded {
+    display: none;
+  }
+}

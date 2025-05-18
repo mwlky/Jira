@@ -8,6 +8,11 @@
 
   background-color: #1d2125;
   border-bottom: 3px solid #282e33;
+  
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .navbar-left {
@@ -196,4 +201,16 @@ button {
   color: #B6C2CF;
   margin-top: 3px;
   margin-bottom: 3px;
+}
+
+@media (max-width: 1085px) {
+  .navbar-button{
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    display: none;
+  }
 }

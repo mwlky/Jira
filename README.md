@@ -17,7 +17,7 @@ Project is currently in development – aimed to be deployed on **Azure**.
 - ✅ Authentication system (login/register)
 - ✅ Task management system (CRUD)
 - ✅ Draggable Tasks
-- 🔄 Responsive UI for desktop and mobile
+- ✅ Responsive UI for desktop and mobile
 - 🔄 Azure deployment pipeline
 
 > ✅ = done
