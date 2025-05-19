@@ -38,7 +38,7 @@ builder.Services.AddAuthentication(x =>
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("FrontendClient",
-        policy => policy.WithOrigins("http://localhost:3000")
+        policy => policy.WithOrigins("https://ambitious-mushroom-00a5e0710.6.azurestaticapps.net/")
                   .AllowAnyMethod()
                   .AllowAnyHeader()
                   .AllowCredentials());
