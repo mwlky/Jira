@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Droppable, Draggable } from "@hello-pangea/dnd";
 import TaskCard from "./TaskCard";
-import { TaskPriority as TaskPriority, Task, TaskType } from "./Task";
+import { TaskPriority, Task, TaskType } from "./Task";
 
 import "../../../styles/global.css";
 import TaskTypeDropdown from "./DropdownWithIcons";

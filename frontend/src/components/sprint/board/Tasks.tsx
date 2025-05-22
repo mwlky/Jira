@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Task, TaskType } from "./Task";
-import { DragDropContext, Droppable, DropResult } from "@hello-pangea/dnd";
+import { Task } from "./Task";
+import { DragDropContext, DropResult } from "@hello-pangea/dnd";
 
 import "../../../styles/tasks.css";
 import TaskContainer from "./TaskContainer";
@@ -46,7 +46,7 @@ const Tasks = () => {
     )
       return;
 
-    const movedTaskIndex = tasks.findIndex((task) => task.id == draggableId);
+    const movedTaskIndex = tasks.findIndex((task) => task.id === draggableId);
     const movedTask = tasks[movedTaskIndex];
     if (!movedTask) return;
 

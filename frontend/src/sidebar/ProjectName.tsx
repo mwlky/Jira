@@ -7,7 +7,7 @@ const ProjectName = () => {
       <img
         className="project-image"
         src="/project-photo.svg"
-        alt="project photo"
+        alt="project logo"
       ></img>
       <div className="project-details">
         <h1 className="project-title">My Project</h1>

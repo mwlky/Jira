@@ -2,7 +2,6 @@ import "./App.css";
 
 import { AuthProvider } from "./components/auth/AuthProvider";
 import {
-  BrowserRouter as Router,
   Routes,
   Route,
   useNavigate,
