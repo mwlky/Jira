@@ -1,27 +1,40 @@
 # 🛠️ Jira Clone – Task Management App
 
+[![Frontend Deploy](https://github.com/mwlky/Jira/actions/workflows/azure-static-web-apps-ashy-smoke-0315b1703.yml/badge.svg)](https://github.com/mwlky/Jira/actions/workflows/azure-static-web-apps-ashy-smoke-0315b1703.yml)
+[![Backend Deploy](https://github.com/mwlky/Jira/actions/workflows/main_jira-server.yml/badge.svg)](https://github.com/mwlky/Jira/actions/workflows/main_jira-server.yml)
+
 A simplified clone of Jira, built with **.NET Core**, **React**, and **TypeScript**.  
-Project is currently in development – aimed to be deployed on **Azure**.
+
+🔗 **Live Demo**: [https://ashy-smoke-0315b1703.6.azurestaticapps.net](https://ashy-smoke-0315b1703.6.azurestaticapps.net)
+
+---
 
 ## 🚀 Tech Stack
 
 - **Frontend**: React, TypeScript
 - **Backend**: ASP.NET Core (C#), REST API, ASP.NET Identity
 - **Authentication**: Cookie-based auth (JWT)
-- **Database**: SQLite -> Azure SQL (planned)
-- **Deployment**: Azure Web App
+- **Database**: PostgreSQL
+- **Deployment**:
+  - Frontend → Azure **Static Web App**
+  - Backend → Azure **App Service**
+- **CI/CD**: GitHub Actions
 
-## 🎯 Features (planned)
+---
+
+## 🎯 Features
 
 - ✅ Project dashboard UI
 - ✅ Authentication system (login/register)
 - ✅ Task management system (CRUD)
 - ✅ Draggable Tasks
 - ✅ Responsive UI for desktop and mobile
-- 🔄 Azure deployment pipeline
+- ✅ Azure deployment pipeline with GitHub Actions
 
-> ✅ = done
-> 🔄 = upcoming
+> ✅ = implemented  
+> 🔄 = in progress
+
+---
 
 ## 📦 How to run locally
 
@@ -39,7 +52,7 @@ npm start
 ```
 
 ### Backend
-
 ```bash
 cd backend
 dotnet run
+```
