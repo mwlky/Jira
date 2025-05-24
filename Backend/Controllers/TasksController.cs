@@ -4,7 +4,6 @@ namespace DG.Jira.Backend.Controllers
     using Models;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Authorization;
-    using backend.Models;
 
     [ApiController]
     [Route("[controller]")]
@@ -93,18 +92,6 @@ namespace DG.Jira.Backend.Controllers
             _context.SaveChanges();
 
             return Ok();
-        }
-
-        [Authorize]
-        [HttpGet("me")]
-        public IActionResult Me()
-        {
-            return Ok(new
-            {
-                User.Identity.Name,
-                IsAuthenticated = User.Identity.IsAuthenticated,
-                Claims = User.Claims.Select(c => new { c.Type, c.Value })
-            });
         }
     }
 }

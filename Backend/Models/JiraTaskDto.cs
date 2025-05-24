@@ -1,15 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace backend.Models
+namespace DG.Jira.Backend.Models
 {
     public class JiraTaskDto
     {
-        public string Type { get; set; }
-        public string Title { get; set; }
-        public string Priority { get; set; }
-        public string DroppableId { get; set; }
+        public required string Type { get; set; }
+        public required string Title { get; set; }
+        public required string Priority { get; set; }
+        public required string DroppableId { get; set; }
     }
 }

@@ -12,7 +12,7 @@ const LoginForm = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const [remember, setRemember] = useState(false);
+  const [remember, setRemember] = useState(false);
   const [error, setError] = useState("");
 
   const handleGoToRegister = () => {
@@ -47,6 +47,7 @@ const LoginForm = () => {
         body: JSON.stringify({
           username: email,
           password: password,
+          rememberMe: remember
         }),
       });
 
@@ -96,7 +97,7 @@ const LoginForm = () => {
               type="checkbox"
               id="remember"
               className="remember-me-checkbox"
-              // onChange={(e) => setRemember(e.target.checked)}
+              onChange={(e) => setRemember(e.target.checked)}
             />
             <label htmlFor="remember" className="remember-me-text">
               Remember me
