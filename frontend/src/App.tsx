@@ -5,7 +5,7 @@ import { isTokenValid } from "./utils/Utils";
 import { AuthProvider } from "./components/auth/AuthProvider";
 import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 
-import MainApp from "./MainApp";
+import MainApp from "./components/main/MainApp";
 import LoginForm from "./components/auth/login/LoginForm";
 import SignupForm from "./components/auth/login/SignupForm";
 import ProtectedRoute from "./components/auth/ProtectedRoute";

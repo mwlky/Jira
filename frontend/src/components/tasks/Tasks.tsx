@@ -18,8 +18,10 @@ const Tasks = () => {
 
         if (!response.ok) {
           const errorText = await response.text();
-          console.error(`HTTP ${response.status}: ${response.statusText} - ${errorText}`)
-          
+          console.error(
+            `HTTP ${response.status}: ${response.statusText} - ${errorText}`
+          );
+
           throw new Error(`HTTP ${response.status}: ${response.statusText}`);
         }
 

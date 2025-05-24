@@ -8,7 +8,7 @@
 
   background-color: #1d2125;
   border-bottom: 3px solid #282e33;
-  
+
   width: 100%;
   max-width: 100vw;
   box-sizing: border-box;
@@ -189,22 +189,22 @@ button {
   padding-left: 5px;
   padding-right: 5px;
   z-index: 1;
-  background-color: #282E33;
-  border: 1px solid #39424A;
+  background-color: #282e33;
+  border: 1px solid #39424a;
   border-radius: 3px;
 
   padding-left: 30px;
   padding-right: 30px;
 }
 
-.logout-text{
-  color: #B6C2CF;
+.logout-text {
+  color: #b6c2cf;
   margin-top: 3px;
   margin-bottom: 3px;
 }
 
 @media (max-width: 1085px) {
-  .navbar-button{
+  .navbar-button {
     display: none;
   }
 }

@@ -1,5 +1,3 @@
-import React from "react";
-
 const AppLauncher = () => {
   return (
     <button className="app-launcher">

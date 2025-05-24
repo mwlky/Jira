@@ -118,8 +118,7 @@
   gap: 10px;
 }
 
-.task-card-flex:hover
-.more-button {
+.task-card-flex:hover .more-button {
   opacity: 1;
   transition: 0.1s;
 }
@@ -217,7 +216,7 @@
   width: 100%;
 }
 
-.more-button{
+.more-button {
   display: flex;
   position: absolute;
   width: 30px;
@@ -229,7 +228,7 @@
   z-index: 1;
   border: none;
   opacity: 0;
-  background-color: #2B333A;
+  background-color: #2b333a;
   padding: 0;
   border-radius: 3px;
 
@@ -253,8 +252,8 @@
   padding-left: 5px;
   padding-right: 5px;
   z-index: 1;
-  background-color: #282E33;
-  border: 1px solid #39424A;
+  background-color: #282e33;
+  border: 1px solid #39424a;
   border-radius: 3px;
 
   padding-left: 30px;
@@ -262,7 +261,7 @@
 }
 
 .remove-text {
-  color: #B6C2CF;
+  color: #b6c2cf;
   margin-top: 5px;
   margin-bottom: 5px;
 }

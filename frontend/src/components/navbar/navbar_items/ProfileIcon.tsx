@@ -10,7 +10,7 @@ const ProfileIcon = () => {
   const onLogout = () => {
     console.log("logout!");
     localStorage.removeItem("token");
-    navigate('/login');
+    navigate("/login");
   };
 
   return (
@@ -23,8 +23,10 @@ const ProfileIcon = () => {
       </button>
 
       {isClicked && (
-        <button className="logout-button" >
-          <p className="logout-text" onClick={onLogout}>Log out</p>
+        <button className="logout-button">
+          <p className="logout-text" onClick={onLogout}>
+            Log out
+          </p>
         </button>
       )}
     </>
