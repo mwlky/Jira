@@ -11,8 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 var key = Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]);
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseNpgsql(
-        "Host=ep-fragrant-forest-a9ylxr6b-pooler.gwc.azure.neon.tech;Database=neondb;Username=neondb_owner;Password=npg_YoiUa5GQLAR1;Ssl Mode=Require;Trust Server Certificate=true"));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddIdentity<IdentityUser, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>()
