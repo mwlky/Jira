@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Droppable, Draggable } from "@hello-pangea/dnd";
 import TaskCard from "./TaskCard";
-import { TaskPriority, Task, TaskType } from "./Task";
+import { TaskPriority as TaskPriority, Task, TaskType } from "./Task";
 
 import "../../../styles/global.css";
 import TaskTypeDropdown from "./DropdownWithIcons";
@@ -60,7 +60,9 @@ const TaskContainer: React.FC<TaskContainerProps> = ({
 
   const onTaskRemove = async (task: Task) => {
     try {
-      const response = await fetch(`http://localhost:5000/tasks/${task.id}`, {
+      const API_URL = process.env.REACT_APP_API_URL;
+
+      const response = await fetch(`${API_URL}/tasks/${task.id}`, {
         method: "DELETE",
       })
 
@@ -85,7 +87,9 @@ const TaskContainer: React.FC<TaskContainerProps> = ({
       };
 
       try {
-        const response = await authFetch("http://localhost:5000/tasks", {
+        const API_URL = process.env.REACT_APP_API_URL;
+
+        const response = await authFetch(`${API_URL}/tasks`, {
           method: "POST",
           body: JSON.stringify(taskToSend),
         });

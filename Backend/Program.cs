@@ -11,7 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 var key = Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]);
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlite("Data Source=app.db"));
+    options.UseNpgsql("Host=ep-fragrant-forest-a9ylxr6b-pooler.gwc.azure.neon.tech;Database=neondb;Username=neondb_owner;Password=npg_YoiUa5GQLAR1;Ssl Mode=Require;Trust Server Certificate=true"));
 
 builder.Services.AddIdentity<IdentityUser, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>()
@@ -38,7 +38,7 @@ builder.Services.AddAuthentication(x =>
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("FrontendClient",
-        policy => policy.WithOrigins("https://ambitious-mushroom-00a5e0710.6.azurestaticapps.net/")
+        policy => policy.WithOrigins("http://localhost:3000", "https://proud-island-06473da10.6.azurestaticapps.net")
                   .AllowAnyMethod()
                   .AllowAnyHeader()
                   .AllowCredentials());
@@ -53,13 +53,6 @@ app.UseCors("FrontendClient");
 
 app.UseAuthentication();
 app.UseAuthorization();
-
-// app.Use(async (context, next) =>
-// {
-//     Console.WriteLine($"🔍 Authenticated: {context.User.Identity?.IsAuthenticated}");
-//     Console.WriteLine($"🔍 Claims: {string.Join(", ", context.User.Claims.Select(c => $"{c.Type}: {c.Value}"))}");
-//     await next();
-// });
 
 app.MapControllers();
 app.Run();

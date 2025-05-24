@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Task } from "./Task";
-import { DragDropContext, DropResult } from "@hello-pangea/dnd";
+import { Task, TaskType } from "./Task";
+import { DragDropContext, Droppable, DropResult } from "@hello-pangea/dnd";
 
 import "../../../styles/tasks.css";
 import TaskContainer from "./TaskContainer";
@@ -12,7 +12,9 @@ const Tasks = () => {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const response = await authFetch("http://localhost:5000/tasks");
+        const API_URL = process.env.REACT_APP_API_URL;
+
+        const response = await authFetch(`${API_URL}/tasks`);
 
         if (!response.ok) {
           const errorText = await response.text();
@@ -46,7 +48,7 @@ const Tasks = () => {
     )
       return;
 
-    const movedTaskIndex = tasks.findIndex((task) => task.id === draggableId);
+    const movedTaskIndex = tasks.findIndex((task) => task.id == draggableId);
     const movedTask = tasks[movedTaskIndex];
     if (!movedTask) return;
 
@@ -68,7 +70,9 @@ const Tasks = () => {
 
     setTasks(newTasks);
     try {
-      await authFetch(`http://localhost:5000/tasks/${updatedTask.id}`, {
+      const API_URL = process.env.REACT_APP_API_URL;
+
+      await authFetch(`${API_URL}/tasks/${updatedTask.id}`, {
         method: "PUT",
         body: JSON.stringify(updatedTask),
       });

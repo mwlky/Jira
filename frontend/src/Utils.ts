@@ -8,8 +8,6 @@ export function isTokenValid(token: string | null): boolean {
   } catch (error) {
     return false;
   }
-
-  return false;
 }
 
 export const authFetch = async (url: string, options: RequestInit = {}) => {

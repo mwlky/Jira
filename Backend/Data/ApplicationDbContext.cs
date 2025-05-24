@@ -15,18 +15,14 @@ namespace DG.Jira.Backend.Data
 
         }
 
-        protected override void OnModelCreating(ModelBuilder builder){
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
             base.OnModelCreating(builder);
 
             builder.Entity<JiraTask>()
                 .HasOne(t => t.User)
                 .WithMany()
                 .HasForeignKey(t => t.UserId);
-        }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlite("Data Source=app.db");
         }
     }
 }
