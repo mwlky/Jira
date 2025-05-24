@@ -1,15 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
-import { TaskPriorityIcons, TaskPriority } from "./Task";
+import { TaskType, TaskTypeIcons } from "../../../utils/Task";
+
+import "./dropdown.css";
 
 interface Props {
-  selectedPriority: TaskPriority;
-  onSelect: (priority: TaskPriority) => void;
+  selectedType: TaskType;
+  onSelect: (type: TaskType) => void;
 }
 
-const TaskPriorityDropdown: React.FC<Props> = ({
-  selectedPriority,
-  onSelect,
-}) => {
+const TaskTypeDropdown: React.FC<Props> = ({ selectedType, onSelect }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -32,7 +31,7 @@ const TaskPriorityDropdown: React.FC<Props> = ({
     <div className="custom-dropdown" ref={dropdownRef}>
       <div className="dropdown-selected" onClick={() => setIsOpen(!isOpen)}>
         <img
-          src={TaskPriorityIcons[selectedPriority]}
+          src={TaskTypeIcons[selectedType]}
           alt=""
           className="dropdown-icon"
         />
@@ -41,7 +40,7 @@ const TaskPriorityDropdown: React.FC<Props> = ({
 
       {isOpen && (
         <div className="dropdown-options">
-          {Object.values(TaskPriority).map((type) => (
+          {Object.values(TaskType).map((type) => (
             <div
               key={type}
               className="dropdown-option"
@@ -50,11 +49,7 @@ const TaskPriorityDropdown: React.FC<Props> = ({
                 setIsOpen(false);
               }}
             >
-              <img
-                src={TaskPriorityIcons[type]}
-                alt=""
-                className="dropdown-icon"
-              />
+              <img src={TaskTypeIcons[type]} alt="" className="dropdown-icon" />
               <span className="type-select-acion-text">{type}</span>
             </div>
           ))}
@@ -64,4 +59,4 @@ const TaskPriorityDropdown: React.FC<Props> = ({
   );
 };
 
-export default TaskPriorityDropdown;
+export default TaskTypeDropdown;

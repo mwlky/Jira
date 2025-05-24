@@ -1,8 +1,7 @@
-import React from "react";
 import SprintPath from "./SprintPath";
 import SprintDetails from "./SprintTitle";
 
-import "../../styles/sprint.css";
+import "./sprint.css";
 
 const SprintInformation = () => {
   return (

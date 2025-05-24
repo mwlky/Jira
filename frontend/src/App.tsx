@@ -1,19 +1,14 @@
 import "./App.css";
 
-import { AuthProvider } from "./components/auth/AuthProvider";
-import {
-  Routes,
-  Route,
-  useNavigate,
-  useLocation,
-} from "react-router-dom";
 import { useEffect } from "react";
-import { isTokenValid } from "./Utils";
+import { isTokenValid } from "./utils/Utils";
+import { AuthProvider } from "./components/auth/AuthProvider";
+import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 
 import MainApp from "./MainApp";
-import LoginForm from "./components/auth/LoginForm";
-import SignupForm from "./components/auth/SignupForm";
-import ProtectedRoute from "./components/ProtectedRoute";
+import LoginForm from "./components/auth/login/LoginForm";
+import SignupForm from "./components/auth/login/SignupForm";
+import ProtectedRoute from "./components/auth/ProtectedRoute";
 
 function App() {
   const navigate = useNavigate();
@@ -23,16 +18,23 @@ function App() {
     const token = localStorage.getItem("token");
     const isLoggedIn = token && isTokenValid(token);
 
-    if (!isLoggedIn && location.pathname !== "/login" && location.pathname !== "/register") 
-    {
+    if (
+      !isLoggedIn &&
+      location.pathname !== "/login" &&
+      location.pathname !== "/register"
+    ) {
       localStorage.removeItem("token");
       navigate("/login");
     }
-    
-    if (isLoggedIn && (location.pathname === "/login" || location.pathname === "/register" || location.pathname === "/")) {
+
+    if (
+      isLoggedIn &&
+      (location.pathname === "/login" ||
+        location.pathname === "/register" ||
+        location.pathname === "/")
+    ) {
       navigate("/board");
     }
-
   }, [navigate, location]);
 
   return (

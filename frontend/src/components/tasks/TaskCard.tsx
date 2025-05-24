@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Task, TaskPriorityIcons, TaskTypeIcons } from "./Task";
+import { Task, TaskPriorityIcons, TaskTypeIcons } from "../../utils/Task";
 
 interface TaskCardProps {
   task: Task;

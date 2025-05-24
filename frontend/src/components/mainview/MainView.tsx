@@ -1,8 +1,6 @@
-import React from "react";
+import "./mainview.css";
 
-import "../../styles/mainview.css";
-
-import Board from "../sprint/board/Board";
+import Board from "../board/Board";
 import SprintInformation from "../sprint/SprintInformation";
 
 const MainView = () => {

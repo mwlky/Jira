@@ -1,7 +1,6 @@
-import React from "react";
-
-import "../../../styles/users.css";
 import SprintUserButton from "./SprintUserButton";
+
+import "./users.css";
 
 const SprintUsers = () => {
   return (

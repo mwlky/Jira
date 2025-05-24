@@ -1,12 +1,13 @@
-import React, { useEffect, useRef, useState } from "react";
+import { authFetch } from "../../utils/Utils";
 import { Droppable, Draggable } from "@hello-pangea/dnd";
-import TaskCard from "./TaskCard";
-import { TaskPriority as TaskPriority, Task, TaskType } from "./Task";
+import { Task, TaskPriority, TaskType } from "../../utils/Task";
 
-import "../../../styles/global.css";
-import TaskTypeDropdown from "./DropdownWithIcons";
+import TaskCard from "./TaskCard";
+import React, { useEffect, useRef, useState } from "react";
 import TaskPriorityDropdown from "./TaskPriorityDropdown";
-import { authFetch } from "../../../Utils";
+import TaskTypeDropdown from "../board/board_items/DropdownWithIcons";
+
+import "../../styles/global.css";
 
 interface TaskContainerProps {
   title: string;
@@ -21,7 +22,7 @@ const TaskContainer: React.FC<TaskContainerProps> = ({
   droppableId,
   tasks,
   onTaskCreate,
-  onTaskRemoved
+  onTaskRemoved,
 }) => {
   const [isCreating, setIsCreating] = useState(false);
   const [newTaskType, setNewTaskType] = useState<TaskType>(TaskType.Story);
@@ -65,13 +66,11 @@ const TaskContainer: React.FC<TaskContainerProps> = ({
 
       const response = await authFetch(`${API_URL}/tasks/${task.id}`, {
         method: "DELETE",
-      })
+      });
 
-      if(!response.ok)
-        throw new Error("Failed to remove task!");
+      if (!response.ok) throw new Error("Failed to remove task!");
 
       onTaskRemoved(task.id);
-
     } catch (error) {
       console.log(error);
     }
@@ -95,8 +94,7 @@ const TaskContainer: React.FC<TaskContainerProps> = ({
           body: JSON.stringify(taskToSend),
         });
 
-        if (!response.ok) 
-          throw new Error("Failed to create task!");
+        if (!response.ok) throw new Error("Failed to create task!");
 
         const createdTask = await response.json();
         onTaskCreate(createdTask);

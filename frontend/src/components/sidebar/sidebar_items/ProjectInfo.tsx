@@ -1,5 +1,4 @@
-import React from "react";
-import "../styles/sidebar.css";
+import "../sidebar.css";
 
 const ProjectInfo = () => {
   return (

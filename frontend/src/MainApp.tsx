@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { AuthProvider } from "./components/auth/AuthProvider";
 
-import Sidebar from "./sidebar/Sidebar";
+import Sidebar from "./components/sidebar/Sidebar";
 import Navbar from "./components/navbar/Navbar";
-import MainView from "./components/navbar/MainView";
+import MainView from "./components/mainview/MainView";
 
 const MainApp = () => {
   useEffect(() => {

@@ -1,14 +1,12 @@
-import React from "react";
+import "../../board/board_items/boardSearchBar.css";
 
-import "../../../styles/boardSearchBar.css";
-
-const BoardSearchBar = () => {
+const SearchBar = () => {
   return (
-    <div className="search-container">
+    <div className="search-container-navbar">
       <img src="/images/search-icon.svg" className="search-icon" alt="" />
       <input type="text" placeholder="Search" className="search-bar" />
     </div>
   );
 };
 
-export default BoardSearchBar;
+export default SearchBar;

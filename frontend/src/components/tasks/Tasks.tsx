@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { Task, TaskType } from "./Task";
-import { DragDropContext, Droppable, DropResult } from "@hello-pangea/dnd";
+import { Task } from "../../utils/Task";
+import { useEffect, useState } from "react";
+import { authFetch } from "../../utils/Utils";
+import { DragDropContext, DropResult } from "@hello-pangea/dnd";
 
-import "../../../styles/tasks.css";
+import "./tasks.css";
 import TaskContainer from "./TaskContainer";
-import { authFetch } from "../../../Utils";
 
 const Tasks = () => {
   const [tasks, setTasks] = useState<Task[]>([]);

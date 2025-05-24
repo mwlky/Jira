@@ -1,6 +1,7 @@
 import { useState } from "react";
-import "../../styles/navbar.css";
 import { useNavigate } from "react-router-dom";
+
+import "../navbar.css";
 
 const ProfileIcon = () => {
   const navigate = useNavigate();

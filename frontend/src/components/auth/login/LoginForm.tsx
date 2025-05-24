@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-
-import "../../styles/loginform.css";
 import { useNavigate } from "react-router-dom";
+
+import "./loginform.css";
 
 const LoginForm = () => {
   const navigate = useNavigate();
@@ -47,7 +47,7 @@ const LoginForm = () => {
         body: JSON.stringify({
           username: email,
           password: password,
-          rememberMe: remember
+          rememberMe: remember,
         }),
       });
 

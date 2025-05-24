@@ -1,11 +1,11 @@
-import React from "react";
-import "../../styles/navbar.css";
-import SearchBar from "./SearchBar";
-import LogoButton from "./LogoButton";
-import ProfileIcon from "./ProfileIcon";
-import AppLauncher from "./AppLauncher";
-import CreateButton from "./CreateButton";
-import NavbarButton from "./NavbarButton";
+import SearchBar from "./navbar_items/SearchBar";
+import LogoButton from "./navbar_items/LogoButton";
+import ProfileIcon from "./navbar_items/ProfileIcon";
+import AppLauncher from "./navbar_items/AppLauncher";
+import CreateButton from "./navbar_items/CreateButton";
+import NavbarButton from "./navbar_items/NavbarButton";
+
+import "./navbar.css";
 
 const Navbar = () => {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../../../styles/users.css";
+import "./users.css";
 
 interface SprintUserButtonProps {
   avatar: string;

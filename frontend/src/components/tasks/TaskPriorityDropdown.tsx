@@ -1,14 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
-import { TaskType, TaskTypeIcons } from "./Task";
-
-import "../../../styles/dropdown.css";
+import { TaskPriority, TaskPriorityIcons } from "../../utils/Task";
 
 interface Props {
-  selectedType: TaskType;
-  onSelect: (type: TaskType) => void;
+  selectedPriority: TaskPriority;
+  onSelect: (priority: TaskPriority) => void;
 }
 
-const TaskTypeDropdown: React.FC<Props> = ({ selectedType, onSelect }) => {
+const TaskPriorityDropdown: React.FC<Props> = ({
+  selectedPriority,
+  onSelect,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -31,7 +32,7 @@ const TaskTypeDropdown: React.FC<Props> = ({ selectedType, onSelect }) => {
     <div className="custom-dropdown" ref={dropdownRef}>
       <div className="dropdown-selected" onClick={() => setIsOpen(!isOpen)}>
         <img
-          src={TaskTypeIcons[selectedType]}
+          src={TaskPriorityIcons[selectedPriority]}
           alt=""
           className="dropdown-icon"
         />
@@ -40,7 +41,7 @@ const TaskTypeDropdown: React.FC<Props> = ({ selectedType, onSelect }) => {
 
       {isOpen && (
         <div className="dropdown-options">
-          {Object.values(TaskType).map((type) => (
+          {Object.values(TaskPriority).map((type) => (
             <div
               key={type}
               className="dropdown-option"
@@ -49,7 +50,11 @@ const TaskTypeDropdown: React.FC<Props> = ({ selectedType, onSelect }) => {
                 setIsOpen(false);
               }}
             >
-              <img src={TaskTypeIcons[type]} alt="" className="dropdown-icon" />
+              <img
+                src={TaskPriorityIcons[type]}
+                alt=""
+                className="dropdown-icon"
+              />
               <span className="type-select-acion-text">{type}</span>
             </div>
           ))}
@@ -59,4 +64,4 @@ const TaskTypeDropdown: React.FC<Props> = ({ selectedType, onSelect }) => {
   );
 };
 
-export default TaskTypeDropdown;
+export default TaskPriorityDropdown;

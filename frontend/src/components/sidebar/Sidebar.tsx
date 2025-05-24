@@ -1,9 +1,10 @@
-import React, { useState } from "react";
-import ProjectName from "./ProjectName";
+import { useState } from "react";
 
-import "../styles/navbar.css";
-import SidebarContent from "./SidebarContent";
-import ProjectInfo from "./ProjectInfo";
+import ProjectName from "./sidebar_items/ProjectName";
+import ProjectInfo from "./sidebar_items/ProjectInfo";
+import SidebarContent from "./sidebar_items/SidebarContent";
+
+import "../navbar/navbar.css";
 
 const Sidebar = () => {
   const [isExpanded, setIsExpanded] = useState(false);

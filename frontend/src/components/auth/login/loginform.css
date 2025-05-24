@@ -109,7 +109,7 @@ html {
   font-family: "Robot", sans-serif;
 }
 
-.create-account-button:hover{
+.create-account-button:hover {
   text-decoration: underline;
 }
 
@@ -126,24 +126,24 @@ html {
   font-family: "Robot", sans-serif;
 }
 
-.cant-login-button:hover{
+.cant-login-button:hover {
   text-decoration: none;
 }
 
 .buttons-divider {
   background: none;
   border: none;
-  color: #9DA292;
+  color: #9da292;
 }
 
-.remember-me-text{
-  font-family: 'Roboto', sans-serif;
+.remember-me-text {
+  font-family: "Roboto", sans-serif;
   font-size: 14px;
   align-self: center;
   margin-left: 8px;
 }
 
-.error-text{
+.error-text {
   color: #d33636;
   font-size: 13px;
   margin: 0;

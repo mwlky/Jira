@@ -1,5 +1,4 @@
-import React from "react";
-import "../../styles/sprint.css";
+import "./sprint.css";
 
 const SprintPath = () => {
   return (

@@ -1,13 +1,13 @@
-import React, { JSX } from "react";
+import { JSX } from "react";
 import { Navigate } from "react-router-dom";
-import { isTokenValid } from "../Utils";
+import { isTokenValid } from "../../utils/Utils";
 
 const ProtectedRoute = ({ children }: { children: JSX.Element }) => {
   const token = localStorage.getItem("token");
 
-  if(!isTokenValid(token)){
+  if (!isTokenValid(token)) {
     localStorage.removeItem("token");
-    return <Navigate to="/login" replace/>
+    return <Navigate to="/login" replace />;
   }
 
   return children;

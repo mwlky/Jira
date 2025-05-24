@@ -1,7 +1,5 @@
-import React from "react";
-
+import "./boardinfopanel.css";
 import "../../../styles/global.css";
-import "../../../styles/boardinfopanel.css";
 
 const BoardInfoPanel = () => {
   return (

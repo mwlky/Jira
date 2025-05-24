@@ -1,7 +1,5 @@
-import React from "react";
-
+import "./sprintButton.css";
 import "../../styles/global.css";
-import "../../styles/sprintButton.css";
 
 const SprintButtons = () => {
   return (
