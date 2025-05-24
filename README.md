@@ -7,6 +7,10 @@ A simplified clone of Jira, built with **.NET Core**, **React**, and **TypeScrip
 
 🔗 **Live Demo**: [https://ashy-smoke-0315b1703.6.azurestaticapps.net](https://ashy-smoke-0315b1703.6.azurestaticapps.net)
 
+## 🖼️ Screenshot
+
+![Jira Clone UI](https://i.imgur.com/w8mORSa.png)
+
 ---
 
 ## 🚀 Tech Stack
@@ -35,6 +39,15 @@ A simplified clone of Jira, built with **.NET Core**, **React**, and **TypeScrip
 > 🔄 = in progress
 
 ---
+
+## 🔐 Demo Credentials
+
+You can log in with the following test account:
+
+```text
+Email: test@gmail.com  
+Password: Test123!
+```
 
 ## 📦 How to run locally
 
