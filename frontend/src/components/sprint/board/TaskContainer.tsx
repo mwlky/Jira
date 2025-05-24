@@ -61,8 +61,9 @@ const TaskContainer: React.FC<TaskContainerProps> = ({
   const onTaskRemove = async (task: Task) => {
     try {
       const API_URL = process.env.REACT_APP_API_URL;
+      const token = localStorage.getItem("token");
 
-      const response = await fetch(`${API_URL}/tasks/${task.id}`, {
+      const response = await authFetch(`${API_URL}/tasks/${task.id}`, {
         method: "DELETE",
       })
 
