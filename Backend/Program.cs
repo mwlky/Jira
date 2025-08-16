@@ -38,7 +38,7 @@ builder.Services.AddAuthentication(x =>
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("FrontendClient",
-        policy => policy.WithOrigins("http://localhost:3000", "https://ashy-smoke-0315b1703.6.azurestaticapps.net")
+        policy => policy.WithOrigins("http://localhost:3000", "https://ashy-smoke-0315b1703.6.azurestaticapps.net", "http://localhost:8080")
             .AllowAnyMethod()
             .AllowAnyHeader()
             .AllowCredentials());
