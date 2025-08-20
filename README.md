@@ -5,7 +5,9 @@
 
 A simplified clone of Jira, built with **.NET Core**, **React**, and **TypeScript**.  
 
-🔗 **Live Demo**: [https://ashy-smoke-0315b1703.6.azurestaticapps.net](https://ashy-smoke-0315b1703.6.azurestaticapps.net)
+🔗 **Static Web App + App Service demo**: [https://ashy-smoke-0315b1703.6.azurestaticapps.net](https://ashy-smoke-0315b1703.6.azurestaticapps.net)
+
+🔗 **AKS Demo**: [48.222.212.47](48.222.212.47)
 
 ## 🖼️ Screenshot
 
@@ -22,8 +24,14 @@ A simplified clone of Jira, built with **.NET Core**, **React**, and **TypeScrip
 - **Deployment**:
   - Frontend → Azure **Static Web App**
   - Backend → Azure **App Service**
+  - **Docker & Kubernetes**:
+    - Both frontend and backend containerized with Docker
+    - Deployed on **Azure Kubernetes Service (AKS)** with NGINX Ingress
+    - Full CORS handling configured via Ingress annotations
+    - Endpoints `/api`, `/auth`, `/tasks` proxied to backend
 - **CI/CD**: GitHub Actions
-
+  - `main` branch → CI/CD pipelines for **Static Web App** and **App Service**
+  - `kubernetes` branch → changes related to **Docker + Kubernetes deployment**
 ---
 
 ## 🎯 Features
@@ -34,6 +42,9 @@ A simplified clone of Jira, built with **.NET Core**, **React**, and **TypeScrip
 - ✅ Draggable Tasks
 - ✅ Responsive UI for desktop and mobile
 - ✅ Azure deployment pipeline with GitHub Actions
+- ✅ Containerized deployment via Docker
+- ✅ Kubernetes deployment on AKS with Ingress routing
+- ✅ Full CORS support and proper backend routing for API endpoints
 
 > ✅ = implemented  
 > 🔄 = in progress
