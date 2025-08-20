@@ -37,11 +37,13 @@ builder.Services.AddAuthentication(x =>
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("FrontendClient",
-        policy => policy.WithOrigins("http://localhost:3000", "https://ashy-smoke-0315b1703.6.azurestaticapps.net", "http://localhost:8080")
+    options.AddPolicy("AllowAll", policy =>
+    {
+        policy
+            .AllowAnyOrigin()
             .AllowAnyMethod()
-            .AllowAnyHeader()
-            .AllowCredentials());
+            .AllowAnyHeader();
+    });
 });
 
 builder.Services.AddAuthorization();
@@ -49,7 +51,9 @@ builder.Services.AddControllers();
 
 var app = builder.Build();
 
-app.UseCors("FrontendClient");
+app.UseRouting();
+
+app.UseCors("AllowAll");
 
 app.UseAuthentication();
 app.UseAuthorization();

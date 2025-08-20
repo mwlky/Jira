@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: mwlky/jira-client:1.0.2
+          image: mwlky/jira-client:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 80
