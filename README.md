@@ -9,6 +9,11 @@ A simplified clone of Jira, built with **.NET Core**, **React**, and **TypeScrip
 
 🔗 **AKS Demo**: [48.222.212.47](48.222.212.47)
 
+### ⚠️ Deployment Status
+
+This project was fully deployed to Azure with CI/CD pipelines.
+Currently, the demo links are temporarily unavailable due to an expired Azure student subscription. I plan to renew my Azure student subscription at the beginning of the academic year, and will restore all cloud resources and demo links shortly after.
+
 ## 🖼️ Screenshot
 
 ![Jira Clone UI](https://i.imgur.com/w8mORSa.png)
