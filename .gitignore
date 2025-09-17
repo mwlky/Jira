@@ -59,3 +59,10 @@ Thumbs.db
 .vscode/
 .idea/
 *.swp
+
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfvars.json
